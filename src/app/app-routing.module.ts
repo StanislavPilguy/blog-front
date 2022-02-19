@@ -36,7 +36,14 @@ const routes: Routes = [
     loadChildren: () => {
       return import('./pages/blog-page/blog-page.module').then(m => m.BlogPageModule)
     }
-  }
+  },
+  {
+    path: 'blog/:id',
+    loadChildren: () => {
+      return import('./pages/post-page/post-page.module').then(m => m.PostPageModule)
+    }
+  },
+
 ];
 
 @NgModule({
