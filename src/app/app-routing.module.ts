@@ -43,7 +43,18 @@ const routes: Routes = [
       return import('./pages/post-page/post-page.module').then(m => m.PostPageModule)
     }
   },
-
+  {
+    path: 'admin',
+    loadChildren: () => {
+      return import('./pages/admin-page/admin-page.module').then(m => m.AdminPageModule)
+    }
+  },
+  {
+    path: '**',
+    loadChildren: () => {
+      return import('./pages/not-found-page/not-found-page.module').then(m => m.NotFoundPageModule)
+    }
+  }
 ];
 
 @NgModule({
