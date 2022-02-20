@@ -1,3 +1,6 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import 'scss/custom';
+:root {
+  --field-padding: 12px;
+}

@@ -1,0 +1,109 @@
+
+.card-login {
+  display: flex;
+  flex-direction: column;
+  margin: 10% auto;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 50px 50px 100px #d9d9d9,
+  -50px -50px 100px #ffffff;
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .custom-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .custom-field {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+  }
+  .custom-field input {
+    border: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 300px;
+    outline: none;
+    font-size: 14px;
+  }
+  .custom-field .custom-placeholder {
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    color: #aaa;
+    transition:
+      top 0.3s ease,
+      font-size 0.3s ease,
+      color 0.3s ease;
+  }
+  .custom-field input.dirty + .custom-placeholder,
+  .custom-field input:focus + .custom-placeholder,
+  .custom-field input:not(:placeholder-shown) + .custom-placeholder {
+    top: 10px;
+    font-size: 10px;
+    color: #222;
+  }
+  .custom-field.one input {
+    background: none;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+  }
+
+  .custom-field.one input + .custom-placeholder {
+    left: 8px;
+    padding: 0 5px;
+  }
+
+  .custom-field.one input.dirty,
+  .custom-field.one input:not(:placeholder-shown),
+  .custom-field.one input:focus {
+    border-color: #222;
+    transition-delay: 0.1s
+  }
+
+  .custom-field.one input.dirty + .custom-placeholder,
+  .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
+  .custom-field.one input:focus + .custom-placeholder {
+    top: 20px;
+    font-size: 10px;
+    color: #222;
+    background: #fff;
+    width: auto
+  }
+
+  button {
+    color: #090909;
+    padding: 0.5em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  }
+
+  button:hover {
+    border: 1px solid white;
+  }
+
+  button:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+    -4px -4px 12px #ffffff;
+  }
+}
+
+
+
+
