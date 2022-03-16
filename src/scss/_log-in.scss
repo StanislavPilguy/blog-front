@@ -5,14 +5,8 @@
   max-width: 400px;
   width: 100%;
   padding: 20px;
-  border-radius: 5px;
-  background: #ffffff;
-  box-shadow: 50px 50px 100px #d9d9d9,
-  -50px -50px 100px #ffffff;
-  h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+  box-shadow: 0 0 50px rgba(0,0,0, .3);
+
   .custom-input {
     display: flex;
     flex-direction: column;
