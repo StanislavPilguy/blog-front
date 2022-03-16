@@ -6,20 +6,19 @@
   width: 100%;
   padding: 20px;
   box-shadow: 0 0 50px rgba(0,0,0, .3);
-
   .custom-input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px auto;
   }
-  .custom-field {
+  .custom-input .custom-field {
     position: relative;
     font-size: 14px;
     padding-top: 20px;
     margin-bottom: 5px;
   }
-  .custom-field input {
+  .custom-input .custom-field input {
     border: none;
     appearance: none;
     background: #f2f2f2;
@@ -29,7 +28,7 @@
     outline: none;
     font-size: 14px;
   }
-  .custom-field .custom-placeholder {
+  .custom-input .custom-field .custom-placeholder {
     position: absolute;
     left: 12px;
     top: calc(50% + 10px);
@@ -40,34 +39,34 @@
       font-size 0.3s ease,
       color 0.3s ease;
   }
-  .custom-field input.dirty + .custom-placeholder,
-  .custom-field input:focus + .custom-placeholder,
-  .custom-field input:not(:placeholder-shown) + .custom-placeholder {
+  .custom-input .custom-field input.dirty + .custom-placeholder,
+  .custom-input .custom-field input:focus + .custom-placeholder,
+  .custom-input .custom-field input:not(:placeholder-shown) + .custom-placeholder {
     top: 10px;
     font-size: 10px;
     color: #222;
   }
-  .custom-field.one input {
+  .custom-input .custom-field.one input {
     background: none;
     border: 2px solid #ddd;
     transition: border-color 0.3s ease;
   }
 
-  .custom-field.one input + .custom-placeholder {
+  .custom-input .custom-field.one input + .custom-placeholder {
     left: 8px;
     padding: 0 5px;
   }
 
-  .custom-field.one input.dirty,
-  .custom-field.one input:not(:placeholder-shown),
-  .custom-field.one input:focus {
+  .custom-input .custom-field.one input.dirty,
+  .custom-input .custom-field.one input:not(:placeholder-shown),
+  .custom-input .custom-field.one input:focus {
     border-color: #222;
     transition-delay: 0.1s
   }
 
-  .custom-field.one input.dirty + .custom-placeholder,
-  .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
-  .custom-field.one input:focus + .custom-placeholder {
+  .custom-input .custom-field.one input.dirty + .custom-placeholder,
+  .custom-input .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
+  .custom-input .custom-field.one input:focus + .custom-placeholder {
     top: 20px;
     font-size: 10px;
     color: #222;
