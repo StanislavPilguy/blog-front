@@ -1,20 +1,24 @@
 <div class="card-login">
-  <form class="form">
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <h2>LogIn</h2>
     <div class="custom-input">
       <label class="custom-field one">
-        <input type="email" placeholder=" " />
+        <input type="email" formControlName="email" placeholder=" " />
         <span class="custom-placeholder">Enter Email</span>
       </label>
     </div>
     <div class="custom-input">
       <label class="custom-field one">
-        <input type="password" placeholder=" " />
+        <input type="password" formControlName="password" placeholder=" " />
         <span class="custom-placeholder">Enter Password</span>
       </label>
     </div>
     <div class="custom-button">
-      <button class="btn" type="submit">login</button>
+      <button
+        class="btn"
+        type="submit"
+        [disabled]="form.invalid"
+      >login</button>
     </div>
   </form>
 </div>
