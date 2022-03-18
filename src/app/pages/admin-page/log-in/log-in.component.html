@@ -1,12 +1,17 @@
 <div class="card-login">
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <h2>LogIn</h2>
-    <div class="custom-input">
+    <div class="custom-input" >
       <label class="custom-field one">
-        <input type="email" formControlName="email" placeholder=" " />
+        <input type="email" formControlName="email" placeholder=" "  />
         <span class="custom-placeholder">Enter Email</span>
       </label>
+<!--      <span class="helper-text red-text" *ngIf="form.get('email').invalid && form.get('email').touched">-->
+<!--        <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>-->
+<!--        <span *ngIf="form.get('email').errors['email']">Введите коректный email адрес</span>-->
+<!--      </span>-->
     </div>
+
     <div class="custom-input">
       <label class="custom-field one">
         <input type="password" formControlName="password" placeholder=" " />

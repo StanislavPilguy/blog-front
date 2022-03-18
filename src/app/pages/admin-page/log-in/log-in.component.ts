@@ -29,6 +29,8 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit() {
-
+    if (this.form.invalid ) {
+      return
+    }
   }
 }
