@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
+import {AuthService} from "../../../services/auth.service";
+
 
 
 @Component({
@@ -11,7 +13,7 @@ export class LogInComponent implements OnInit {
   public form!: FormGroup;
 
   constructor(
-    // private authService: AuthService,
+    private _auth: AuthService,
     // private router: Router
   ) { }
 
@@ -29,8 +31,6 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.invalid ) {
-      return
-    }
+
   }
 }

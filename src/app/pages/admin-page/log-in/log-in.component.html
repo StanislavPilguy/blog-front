@@ -6,10 +6,7 @@
         <input type="email" formControlName="email" placeholder=" "  />
         <span class="custom-placeholder">Enter Email</span>
       </label>
-<!--      <span class="helper-text red-text" *ngIf="form.get('email').invalid && form.get('email').touched">-->
-<!--        <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>-->
-<!--        <span *ngIf="form.get('email').errors['email']">Введите коректный email адрес</span>-->
-<!--      </span>-->
+
     </div>
 
     <div class="custom-input">
@@ -22,7 +19,7 @@
       <button
         class="btn"
         type="submit"
-        [disabled]="form.invalid"
+
       >login</button>
     </div>
   </form>
