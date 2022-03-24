@@ -3,15 +3,18 @@
     <h2>LogIn</h2>
     <div class="custom-input" >
       <label class="custom-field one">
-        <input type="email" formControlName="email" placeholder=" "  />
+        <input type="email" name="email" id="email" formControlName="email" placeholder=" " required />
         <span class="custom-placeholder">Enter Email</span>
       </label>
-
+      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
+        <span *ngIf="form.errors?.['required']" class="helper-text">Email is require</span>
+        <span *ngIf="form.errors?.['email']" class="helper-text">Enter a valid email</span>
+      </span>
     </div>
 
     <div class="custom-input">
       <label class="custom-field one">
-        <input type="password" formControlName="password" placeholder=" " />
+        <input type="password" formControlName="password" placeholder=" " required />
         <span class="custom-placeholder">Enter Password</span>
       </label>
     </div>
@@ -19,7 +22,7 @@
       <button
         class="btn"
         type="submit"
-
+        [disabled]="form.invalid || form.disabled"
       >login</button>
     </div>
   </form>

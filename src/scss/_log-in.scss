@@ -19,6 +19,9 @@
     h2 {
       display: block;
       text-align: center;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: bold;
+      padding-top: 20px;
     }
     .custom-input {
       display: flex;
@@ -26,6 +29,12 @@
       justify-content: center;
       margin: 10px auto;
       width: 100%;
+      .red {
+        color: red;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+      }
     }
     .custom-input .custom-field {
       position: relative;
@@ -95,6 +104,7 @@
 
 .custom-button {
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 .btn {
   color: #090909;
@@ -113,7 +123,6 @@
   transition:
     background-color 0.3s ease-in,
     color 0.3s ease-in;
-;
   color: #f2f2f2;
 }
 
