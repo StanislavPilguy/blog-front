@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 import {AuthService} from "../../../services/auth.service";
 import {Subscription} from "rxjs";
+import {Router} from "@angular/router";
 
 
 
@@ -12,11 +13,13 @@ import {Subscription} from "rxjs";
 })
 export class LogInComponent implements OnInit, OnDestroy {
   public form!: FormGroup;
-  public aSub!: Subscription
+  public aSub!: Subscription;
+  public messageEmail: string = '';
+
 
   constructor(
     private _auth: AuthService,
-    // private router: Router
+    private _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +39,11 @@ export class LogInComponent implements OnInit, OnDestroy {
     return this.form.get('email')
   }
 
+  get password() {
+    return this.form.get('password')
+  }
+
+
   ngOnDestroy() {
     if (this.aSub) {
       this.aSub.unsubscribe();
@@ -46,9 +54,21 @@ export class LogInComponent implements OnInit, OnDestroy {
     this.form.disable()
 
     this.aSub = this._auth.login(this.form.value).subscribe(
-      () => console.log('success'),
+      () => {
+        console.log('success');
+        this.messageEmail = '';
+      },
       error => {
-        console.warn(error)
+        if (error?.error?.message) {
+          this.messageEmail = error.error.message;
+        }
+        if (error?.error?.message === 'Internal server error') {
+          this._router.navigate(['/admin', 'registration'], {
+            queryParams: {
+              email: this.email?.value
+            }
+          }).then()
+        }
         this.form.enable()
       }
     )

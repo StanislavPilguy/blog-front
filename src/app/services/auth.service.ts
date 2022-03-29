@@ -27,9 +27,11 @@ export class AuthService {
           if (res.token) {
             console.log('token', res);
             window.localStorage.setItem('token', res.token);
-            this._router.navigate(['/admin', 'dashboard']);
+            this._router.navigate(['/admin', 'dashboard']).then()
           }
         })
       )
   }
+
+
 }

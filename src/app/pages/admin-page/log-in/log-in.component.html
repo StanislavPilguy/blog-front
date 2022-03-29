@@ -6,9 +6,17 @@
         <input type="email" name="email" id="email" formControlName="email" placeholder=" " required />
         <span class="custom-placeholder">Enter Email</span>
       </label>
+      <span
+        *ngIf="messageEmail.length"
+      >
+        {{ messageEmail }}
+      </span>
       <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
-        <span *ngIf="form.errors?.['required']" class="helper-text">Email is require</span>
-        <span *ngIf="form.errors?.['email']" class="helper-text">Enter a valid email</span>
+        <span
+          *ngIf="email?.invalid"
+          class="err">
+            Email not valid
+        </span>
       </span>
     </div>
 
@@ -17,6 +25,18 @@
         <input type="password" formControlName="password" placeholder=" " required />
         <span class="custom-placeholder">Enter Password</span>
       </label>
+      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
+        <span
+          *ngIf="password?.invalid"
+          class="err">
+            Password not be empty
+        </span>
+        <span
+          *ngIf="password?.errors?.['minlength']"
+        >
+          Name must be at least 4 characters long.
+        </span>
+      </span>
     </div>
     <div class="custom-button">
       <button
