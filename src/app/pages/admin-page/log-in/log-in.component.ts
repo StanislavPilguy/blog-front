@@ -55,12 +55,11 @@ export class LogInComponent implements OnInit, OnDestroy {
 
     this.aSub = this._auth.login(this.form.value).subscribe(
       () => {
-        console.log('success');
         this.messageEmail = '';
       },
       error => {
-        if (error?.error?.message) {
-          this.messageEmail = error.error.message;
+        if (error?.error?.msg) {
+          this.messageEmail = error.error.msg;
         }
         if (error?.error?.message === 'Internal server error') {
           this._router.navigate(['/admin', 'registration'], {

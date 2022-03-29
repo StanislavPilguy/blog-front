@@ -33,5 +33,17 @@ export class AuthService {
       )
   }
 
+   public registration(user: UserInterface): Observable<UserToken> {
+    return this._http.post<UserToken>(this.urlRegistration, {
+      ...user
+    }).pipe(
+      tap(res => {
+        if (res.token) {
+          console.log('user', res)
+          window.localStorage.setItem('token', res.token)
 
+        }
+      })
+    )
+  }
 }

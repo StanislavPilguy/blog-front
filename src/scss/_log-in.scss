@@ -22,12 +22,12 @@
       font-family: 'Nunito Sans', sans-serif;
       font-weight: bold;
       padding-top: 20px;
+      margin-top: 60px;
     }
     .custom-input {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 10px auto;
       width: 100%;
       .red {
         color: red;
@@ -35,6 +35,12 @@
         font-size: 1em;
         font-weight: 400;
       }
+    }
+    .alert-error {
+      color: red;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1em;
+      font-weight: 400;
     }
     .custom-input .custom-field {
       position: relative;
@@ -98,13 +104,12 @@
       background: #fff;
       width: auto
     }
-
   }
 }
 
 .custom-button {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .btn {
   color: #090909;
