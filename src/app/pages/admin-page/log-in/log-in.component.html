@@ -1,7 +1,7 @@
 <div class="card-login">
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <h2>Log In</h2>
-    <div class="custom-input" >
+    <div class="custom-input" [ngClass]="{invalid: form.invalid && (form.touched || form.dirty)}">
       <label class="custom-field one">
         <input type="email" name="email" id="email" formControlName="email" placeholder=" " required />
         <span class="custom-placeholder">Enter Email</span>
