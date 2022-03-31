@@ -1,9 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 import {AuthService} from "../../../services/auth.service";
 import {Subscription} from "rxjs";
-import {Router} from "@angular/router";
+import {IUser} from "../../../interfaces/iUser";
 
 
 
@@ -12,9 +13,16 @@ import {Router} from "@angular/router";
   templateUrl: './log-in.component.html',
 })
 export class LogInComponent implements OnInit, OnDestroy {
+  private user: IUser = {
+    email: '',
+    password: '',
+    role: ''
+  };
+  // private token: IToken = {
+  //   token: ''
+  // };
   public form!: FormGroup;
   public aSub!: Subscription;
-  public messageEmail: string = '';
 
 
   constructor(
@@ -50,26 +58,23 @@ export class LogInComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSubmit() {
+  onSubmit(): void {
+    this.user.email = this.form.value.email;
+    this.user.password = this.form.value.password;
+
     this.form.disable()
 
-    this.aSub = this._auth.login(this.form.value).subscribe(
-      () => {
-        this.messageEmail = '';
-      },
-      error => {
-        if (error?.error?.msg) {
-          this.messageEmail = error.error.msg;
+    this.aSub = this._auth.login(this.user)
+      .subscribe(
+        () => {
+          this._router.navigate(['/admin', 'dashboard']).then()
+          this.form.enable()
+        },
+        (error) => {
+          if (error.error.msg) {
+
+          }
         }
-        if (error?.error?.message === 'Internal server error') {
-          this._router.navigate(['/admin', 'registration'], {
-            queryParams: {
-              email: this.email?.value
-            }
-          }).then()
-        }
-        this.form.enable()
-      }
-    )
-  }
+      )
+   }
 }

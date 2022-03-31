@@ -38,19 +38,15 @@
         </span>
       </span>
     </div>
-    <div class="alert-error">
-      <span
-        *ngIf="messageEmail.length"
-      >
-        {{ messageEmail }}
-      </span>
-    </div>
     <div class="custom-button">
       <button
         class="btn"
         type="submit"
         [disabled]="form.invalid || form.disabled"
       >login</button>
+    </div>
+    <div class="custom-input">
+      <a routerLink="registration">Sing Up</a>
     </div>
   </form>
 </div>

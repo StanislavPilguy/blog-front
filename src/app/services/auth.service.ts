@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 
 import {environment} from "../../environments/environment";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {IUser} from "../interfaces/iUser";
 import {IToken} from "../interfaces/iToken";
 
@@ -22,7 +22,14 @@ export class AuthService {
   ) {}
 
   public login(user: IUser): Observable<IToken> {
-    return this._http.post<IToken>(this.urlSingIn, user);
+    return this._http.post<IToken>(this.urlSingIn, user)
+      .pipe(
+        tap(res => {
+          if (res.token) {
+            window.localStorage.setItem('token', res.token)
+          }
+        })
+      )
   }
 
   public registration(user: IUser): Observable<IToken> {
