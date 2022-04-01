@@ -1,12 +1,13 @@
 <div class="card-login">
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h2>Log In</h2>
+    <h2>{{ title }}</h2>
     <div class="custom-input" [ngClass]="{invalid: form.invalid && (form.touched || form.dirty)}">
       <label class="custom-field one">
         <input type="email" name="email" id="email" formControlName="email" placeholder=" " required />
         <span class="custom-placeholder">Enter Email</span>
       </label>
-      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
+    </div>
+    <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error ">
         <span
           *ngIf="email?.errors?.['required']"
           class="err">
@@ -18,14 +19,13 @@
          Incorect Email
         </span>
       </span>
-    </div>
-
     <div class="custom-input">
       <label class="custom-field one">
         <input type="password" formControlName="password" placeholder=" " required />
         <span class="custom-placeholder">Enter Password</span>
       </label>
-      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
+    </div>
+    <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error">
         <span
           *ngIf="password?.errors?.['required']"
           class="err">
@@ -36,8 +36,8 @@
         >
           Password must be at least 6 characters long.
         </span>
-      </span>
-    </div>
+    </span>
+    <small class="alert-error">{{ msg }}</small>
     <div class="custom-button">
       <button
         class="btn"
@@ -45,8 +45,8 @@
         [disabled]="form.invalid || form.disabled"
       >login</button>
     </div>
-    <div class="custom-input">
-      <a routerLink="registration">Sing Up</a>
+    <div class="form-item">
+      <a routerLink="/admin/registration">Sing Up</a>
     </div>
   </form>
 </div>

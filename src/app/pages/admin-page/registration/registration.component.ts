@@ -9,8 +9,10 @@ import {Subscription} from "rxjs";
   templateUrl: './registration.component.html',
 })
 export class RegistrationComponent implements OnInit, OnDestroy {
+  public title = 'Sing Up'
   public form!: FormGroup;
   public aSub!: Subscription;
+  public msg: string = '';
 
   constructor(
     private _auth: AuthService,
@@ -76,7 +78,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         }
         this.form.enable()
       }
-
     )
 
   }

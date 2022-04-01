@@ -3,8 +3,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   box-shadow: 0 0 50px rgba(0,0,0, .3);
   form {
     display: flex;
@@ -14,34 +12,20 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, .3);
     max-width: 350px;
     width: 100%;
-    height: 350px;
     padding: 20px;
     h2 {
       display: block;
       text-align: center;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: bold;
-      padding-top: 20px;
-      margin-top: 60px;
     }
     .custom-input {
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      .red {
-        color: red;
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 0.8em;
-        font-weight: 400;
-      }
     }
-    .alert-error {
-      color: red;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 0.5em;
-      font-weight: 400;
-    }
+
     .custom-input .custom-field {
       position: relative;
       font-size: 14px;
@@ -82,19 +66,16 @@
       border: 2px solid #ddd;
       transition: border-color 0.3s ease;
     }
-
     .custom-input .custom-field.one input + .custom-placeholder {
       left: 8px;
       padding: 0 5px;
     }
-
     .custom-input .custom-field.one input.dirty,
     .custom-input .custom-field.one input:not(:placeholder-shown),
     .custom-input .custom-field.one input:focus {
       border-color: #222;
       transition-delay: 0.1s
     }
-
     .custom-input .custom-field.one input.dirty + .custom-placeholder,
     .custom-input .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
     .custom-input .custom-field.one input:focus + .custom-placeholder {
@@ -104,12 +85,28 @@
       background: #fff;
       width: auto
     }
+
+    .alert-error {
+      display: block;
+      color: red;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.9em;
+      font-weight: 400;
+      width: 100%;
+      height: 15px;
+    }
+    .form-item {
+      padding-top: 20px;
+      a {
+        text-underline: none;
+      }
+    }
   }
+
 }
 
 .custom-button {
   margin-top: 20px;
-  margin-bottom: 80px;
 }
 .btn {
   color: #090909;
@@ -134,6 +131,7 @@
 .btn:active {
   box-shadow: 4px 4px 12px #c5c5c5,
   -4px -4px 12px #ffffff;
+  outline: #e8e8e8!important;
 }
 
 

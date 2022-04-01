@@ -18,11 +18,10 @@ export class LogInComponent implements OnInit, OnDestroy {
     password: '',
     role: ''
   };
-  // private token: IToken = {
-  //   token: ''
-  // };
   public form!: FormGroup;
   public aSub!: Subscription;
+  public msg: string = '';
+  public title: string = 'Sing In'
 
 
   constructor(
@@ -51,7 +50,6 @@ export class LogInComponent implements OnInit, OnDestroy {
     return this.form.get('password')
   }
 
-
   ngOnDestroy() {
     if (this.aSub) {
       this.aSub.unsubscribe();
@@ -62,17 +60,17 @@ export class LogInComponent implements OnInit, OnDestroy {
     this.user.email = this.form.value.email;
     this.user.password = this.form.value.password;
 
-    this.form.disable()
+    this.form.disable();
 
     this.aSub = this._auth.login(this.user)
       .subscribe(
         () => {
-          this._router.navigate(['/admin', 'dashboard']).then()
-          this.form.enable()
+          this._router.navigate(['/admin', 'dashboard']).then();
+          this.form.enable();
         },
         (error) => {
           if (error.error.msg) {
-
+           this.msg = error.error.msg;
           }
         }
       )

@@ -1,110 +1,135 @@
 .card-login {
   display: flex;
-  flex-direction: column;
-  margin: 10% auto;
-  max-width: 400px;
-  width: 100%;
-  padding: 20px;
-  border-radius: 5px;
-  background: #ffffff;
-  box-shadow: 50px 50px 100px #d9d9d9,
-  -50px -50px 100px #ffffff;
-  h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .custom-input {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-shadow: 0 0 50px rgba(0,0,0, .3);
+  form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10px auto;
-  }
-  .custom-field {
-    position: relative;
-    font-size: 14px;
-    padding-top: 20px;
-    margin-bottom: 5px;
-  }
-  .custom-field input {
-    border: none;
-    appearance: none;
-    background: #f2f2f2;
-    padding: 12px;
-    border-radius: 3px;
-    width: 300px;
-    outline: none;
-    font-size: 14px;
-  }
-  .custom-field .custom-placeholder {
-    position: absolute;
-    left: 12px;
-    top: calc(50% + 10px);
-    transform: translateY(-50%);
-    color: #aaa;
-    transition:
-      top 0.3s ease,
-      font-size 0.3s ease,
-      color 0.3s ease;
-  }
-  .custom-field input.dirty + .custom-placeholder,
-  .custom-field input:focus + .custom-placeholder,
-  .custom-field input:not(:placeholder-shown) + .custom-placeholder {
-    top: 10px;
-    font-size: 10px;
-    color: #222;
-  }
-  .custom-field.one input {
-    background: none;
-    border: 2px solid #ddd;
-    transition: border-color 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .3);
+    max-width: 350px;
+    width: 100%;
+    padding: 20px;
+    h2 {
+      display: block;
+      text-align: center;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: bold;
+    }
+    .custom-input {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .custom-input .custom-field {
+      position: relative;
+      font-size: 14px;
+      padding-top: 20px;
+      margin-bottom: 5px;
+    }
+    .custom-input .custom-field input {
+      display: block;
+      border: none;
+      appearance: none;
+      background: #f2f2f2;
+      padding: 12px;
+      border-radius: 3px;
+      width: 100%;
+      outline: none;
+      font-size: 14px;
+    }
+    .custom-input .custom-field .custom-placeholder {
+      position: absolute;
+      left: 12px;
+      top: calc(50% + 10px);
+      transform: translateY(-50%);
+      color: #aaa;
+      transition:
+        top 0.3s ease,
+        font-size 0.3s ease,
+        color 0.3s ease;
+    }
+    .custom-input .custom-field input.dirty + .custom-placeholder,
+    .custom-input .custom-field input:focus + .custom-placeholder,
+    .custom-input .custom-field input:not(:placeholder-shown) + .custom-placeholder {
+      top: 10px;
+      font-size: 10px;
+      color: #222;
+    }
+    .custom-input .custom-field.one input {
+      background: none;
+      border: 2px solid #ddd;
+      transition: border-color 0.3s ease;
+    }
+    .custom-input .custom-field.one input + .custom-placeholder {
+      left: 8px;
+      padding: 0 5px;
+    }
+    .custom-input .custom-field.one input.dirty,
+    .custom-input .custom-field.one input:not(:placeholder-shown),
+    .custom-input .custom-field.one input:focus {
+      border-color: #222;
+      transition-delay: 0.1s
+    }
+    .custom-input .custom-field.one input.dirty + .custom-placeholder,
+    .custom-input .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
+    .custom-input .custom-field.one input:focus + .custom-placeholder {
+      top: 20px;
+      font-size: 10px;
+      color: #222;
+      background: #fff;
+      width: auto
+    }
+
+    .alert-error {
+      display: block;
+      color: red;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.9em;
+      font-weight: 400;
+      width: 100%;
+      height: 15px;
+    }
+    .form-item {
+      padding-top: 20px;
+      a {
+        text-underline: none;
+      }
+    }
   }
 
-  .custom-field.one input + .custom-placeholder {
-    left: 8px;
-    padding: 0 5px;
-  }
-
-  .custom-field.one input.dirty,
-  .custom-field.one input:not(:placeholder-shown),
-  .custom-field.one input:focus {
-    border-color: #222;
-    transition-delay: 0.1s
-  }
-
-  .custom-field.one input.dirty + .custom-placeholder,
-  .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
-  .custom-field.one input:focus + .custom-placeholder {
-    top: 20px;
-    font-size: 10px;
-    color: #222;
-    background: #fff;
-    width: auto
-  }
 }
+
 .custom-button {
-  margin: 20px;
-  .btn {
-    color: #090909;
-    padding: 0.5em 1.7em;
-    font-size: 18px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    box-shadow: 6px 6px 12px #c5c5c5,
-    -6px -6px 12px #ffffff;
-  }
-
-  .btn:hover {
-    border: 1px solid white;
-  }
-
-  .btn:active {
-    box-shadow: 4px 4px 12px #c5c5c5,
-    -4px -4px 12px #ffffff;
-  }
+  margin-top: 20px;
+}
+.btn {
+  color: #090909;
+  padding: 0.5em 1.7em;
+  font-size: 18px;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+  -6px -6px 12px #ffffff;
+  outline: none!important;
 }
 
+.btn:hover {
+  background-color: #32CD32;
+  transition:
+    background-color 0.3s ease-in,
+    color 0.3s ease-in;
+  color: #f2f2f2;
+}
 
-
-
+.btn:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+  -4px -4px 12px #ffffff;
+  outline: #e8e8e8!important;
+}

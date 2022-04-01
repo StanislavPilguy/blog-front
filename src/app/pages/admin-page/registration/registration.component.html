@@ -1,44 +1,52 @@
 <div class="card-login">
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h2>Log Up</h2>
-    <div class="custom-input" >
+    <h2>{{ title }}</h2>
+    <div class="custom-input" [ngClass]="{invalid: form.invalid && (form.touched || form.dirty)}">
       <label class="custom-field one">
         <input type="email" name="email" id="email" formControlName="email" placeholder=" " required />
         <span class="custom-placeholder">Enter Email</span>
       </label>
-      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
+    </div>
+    <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error ">
         <span
-          *ngIf="email?.invalid"
+          *ngIf="email?.errors?.['required']"
           class="err">
-            Email not valid
+            Email must not be empty
+        </span>
+        <span
+          *ngIf="email?.errors?.['email']"
+        >
+         Incorect Email
         </span>
       </span>
-    </div>
-
     <div class="custom-input">
       <label class="custom-field one">
         <input type="password" formControlName="password" placeholder=" " required />
         <span class="custom-placeholder">Enter Password</span>
       </label>
-      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="red">
+    </div>
+    <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error">
         <span
-          *ngIf="password?.invalid"
+          *ngIf="password?.errors?.['required']"
           class="err">
             Password not be empty
         </span>
         <span
           *ngIf="password?.errors?.['minlength']"
         >
-          Name must be at least 4 characters long.
+          Password must be at least 6 characters long.
         </span>
-      </span>
-    </div>
+    </span>
+    <small class="alert-error">{{ msg }}</small>
     <div class="custom-button">
       <button
         class="btn"
         type="submit"
         [disabled]="form.invalid || form.disabled"
-      >registration</button>
+      >login</button>
+    </div>
+    <div class="form-item">
+      <a routerLink="/admin/registration">Sing Up</a>
     </div>
   </form>
 </div>
