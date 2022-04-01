@@ -55,7 +55,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.user.email = this.form.value.email;
     this.user.password = this.form.value.password;
 
@@ -67,10 +67,10 @@ export class RegistrationComponent implements OnInit, OnDestroy {
           this._router.navigate(['/admin', 'log-in']).then()
         },
         (error) => {
-          if (error.error.message) {
-            this.message = error.error.message;
-          }
+        if (error.error.message) {
+          this.message = error.error.message;
         }
-      )
+      }
+    )
   }
 }

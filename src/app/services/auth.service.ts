@@ -33,6 +33,15 @@ export class AuthService {
   }
 
   public registration(user: IUser): Observable<IToken> {
-    return this._http.post<IToken>(this.urlSingUp, user);
+    return this._http.post<IToken>(this.urlSingUp, user)
+      .pipe(
+        tap(
+          res => {
+            if (res.token) {
+              window.localStorage.setItem('token', res.token)
+            }
+          }
+        )
+      )
   }
 }
