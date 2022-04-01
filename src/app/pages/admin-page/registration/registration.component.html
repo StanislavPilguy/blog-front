@@ -37,16 +37,13 @@
           Password must be at least 6 characters long.
         </span>
     </span>
-    <small class="alert-error">{{ msg }}</small>
+    <small class="alert-error">{{ message }}</small>
     <div class="custom-button">
       <button
         class="btn"
         type="submit"
         [disabled]="form.invalid || form.disabled"
       >login</button>
-    </div>
-    <div class="form-item">
-      <a routerLink="/admin/registration">Sing Up</a>
     </div>
   </form>
 </div>

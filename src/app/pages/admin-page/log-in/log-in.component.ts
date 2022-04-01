@@ -20,6 +20,7 @@ export class LogInComponent implements OnInit, OnDestroy {
   };
   public form!: FormGroup;
   public aSub!: Subscription;
+  public massage: string = '';
   public msg: string = '';
   public title: string = 'Sing In'
 
@@ -69,10 +70,10 @@ export class LogInComponent implements OnInit, OnDestroy {
           this.form.enable();
         },
         (error) => {
-          if (error.error.msg) {
-           this.msg = error.error.msg;
+          if (error.error.massage) {
+           this.massage = error.error.massage;
           }
-        }
+        },
       )
    }
 }

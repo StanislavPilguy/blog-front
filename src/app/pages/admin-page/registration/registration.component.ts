@@ -1,18 +1,26 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+
 import {AuthService} from "../../../services/auth.service";
 import {Subscription} from "rxjs";
+import {IUser} from "../../../interfaces/iUser";
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
 })
 export class RegistrationComponent implements OnInit, OnDestroy {
+  private user: IUser = {
+    email: '',
+    password: '',
+    role: ''
+  };
+
   public title = 'Sing Up'
   public form!: FormGroup;
   public aSub!: Subscription;
-  public msg: string = '';
+  public message: string = '';
 
   constructor(
     private _auth: AuthService,
@@ -31,18 +39,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
         Validators.minLength(6)
       ])
     })
-
-    this._activatedRoute.queryParams.subscribe(
-      params => {
-        console.log(params)
-        const {email} = params
-        if (email) {
-          console.log(email)
-          // @ts-ignore
-          this.form.get('email').value = email
-        }
-      }
-    )
   }
 
   get email() {
@@ -60,25 +56,21 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    this.user.email = this.form.value.email;
+    this.user.password = this.form.value.password;
+
     this.form.disable();
 
-    this.aSub = this._auth.registration(this.form.value).subscribe(
-      () => {
-      },
-      error => {
-        if (error?.error?.message) {
-          //this.messageEmail = error.error.message;
+    this.aSub = this._auth.registration(this.user)
+      .subscribe(
+        () => {
+          this._router.navigate(['/admin', 'log-in']).then()
+        },
+        (error) => {
+          if (error.error.message) {
+            this.message = error.error.message;
+          }
         }
-        if (error?.error?.message === 'Internal server error') {
-          this._router.navigate(['/admin', 'log-in'], {
-            queryParams: {
-              email: this.email?.value
-            }
-          }).then()
-        }
-        this.form.enable()
-      }
-    )
-
+      )
   }
 }
