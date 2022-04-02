@@ -15,6 +15,9 @@ export class AuthService {
   readonly urlSingIn = this.url + 'auth/log-in';
   readonly urlSingUp = this.url + 'auth/registration';
 
+  private token: IToken = {
+    token: ''
+  }
 
   constructor(
     private _http: HttpClient,
@@ -44,4 +47,9 @@ export class AuthService {
         )
       )
   }
+
+  isAuthenticated(): boolean {
+    return !!this.token
+  }
+
 }

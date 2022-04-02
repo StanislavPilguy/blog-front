@@ -66,6 +66,7 @@ export class LogInComponent implements OnInit, OnDestroy {
     this.aSub = this._auth.login(this.user)
       .subscribe(
         () => {
+          this.form.reset();
           this._router.navigate(['/admin', 'dashboard']).then();
           this.form.enable();
         },
