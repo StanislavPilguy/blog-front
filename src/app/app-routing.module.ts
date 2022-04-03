@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: 'blog',
     pathMatch: 'full'
   },
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => {
       return import('./pages/admin-page/admin-page.module').then(m => m.AdminPageModule)
-    }
+    },
   },
   {
     path: '**',

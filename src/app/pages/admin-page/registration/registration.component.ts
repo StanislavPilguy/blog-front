@@ -14,7 +14,7 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   private user: IUser = {
     email: '',
     password: '',
-    role: ''
+    role: '',
   };
 
   public title = 'Sing Up'

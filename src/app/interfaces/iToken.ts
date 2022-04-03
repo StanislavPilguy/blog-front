@@ -1,3 +1,8 @@
+import {IRoles} from "./iRoles";
+import {IUser} from "./iUser";
+
 export interface IToken {
-  readonly token: string;
+  token: string;
+  role: IRoles[];
+  user: IUser;
 }

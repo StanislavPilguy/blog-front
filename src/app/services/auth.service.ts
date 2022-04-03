@@ -15,9 +15,24 @@ export class AuthService {
   readonly urlSingIn = this.url + 'auth/log-in';
   readonly urlSingUp = this.url + 'auth/registration';
 
-  private token: IToken = {
-    token: ''
+  get token(): string {
+    // @ts-ignore
+    return window.localStorage.getItem('token') ? window.localStorage.getItem('token') : ''
   }
+  get role(): string {
+    // @ts-ignore
+    return window.localStorage.getItem('role') ? +window.localStorage.getItem('role') : 0
+  }
+  get description(): string {
+    // @ts-ignore
+    return window.localStorage.getItem('description') ? window.localStorage.getItem('description') : ''
+  }
+
+  get email(): string {
+    // @ts-ignore
+    return window.localStorage.getItem('email') ? window.localStorage.getItem('email') : ''
+  }
+
 
   constructor(
     private _http: HttpClient,
@@ -30,6 +45,9 @@ export class AuthService {
         tap(res => {
           if (res.token) {
             window.localStorage.setItem('token', res.token)
+            window.localStorage.setItem('role', res.role[0].value)
+            window.localStorage.setItem('description', res.role[0].description)
+            window.localStorage.setItem('email', res.user.email)
           }
         })
       )
@@ -40,8 +58,10 @@ export class AuthService {
       .pipe(
         tap(
           res => {
-            if (res.token) {
+            if (res) {
+              console.log(res)
               window.localStorage.setItem('token', res.token)
+
             }
           }
         )
@@ -52,4 +72,14 @@ export class AuthService {
     return !!this.token
   }
 
+
+  logout() {
+    window.localStorage.clear()
+    this._router.navigate(['/admin', 'log-in']).then()
+  }
+
+  isAdmin(): boolean {
+    // @ts-ignore
+    return this.role === 1 && this.role === 2;
+  }
 }

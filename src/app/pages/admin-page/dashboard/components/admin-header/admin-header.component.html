@@ -1,1 +1,19 @@
-<p>admin-header works!</p>
+<header>
+  <ul>
+    <li>
+      <a routerLink="categories">categories</a>
+    </li>
+    <li>
+      <a routerLink="create-category">create categories</a>
+    </li>
+    <li>
+      <a>Welcome {{ auth.email }}</a>
+    </li>
+    <li>
+      <a>Role {{ auth.role }}</a>
+    </li>
+    <li>
+      <button (click)="auth.logout()">logOut</button>
+    </li>
+  </ul>
+</header>

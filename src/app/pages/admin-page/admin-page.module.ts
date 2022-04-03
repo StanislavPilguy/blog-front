@@ -26,6 +26,9 @@ import { AdminFooterComponent } from './dashboard/components/admin-footer/admin-
     ReactiveFormsModule,
     FormsModule,
   ],
-  exports: []
+  exports: [
+    AdminFooterComponent,
+    AdminHeaderComponent
+  ]
 })
 export class AdminPageModule { }

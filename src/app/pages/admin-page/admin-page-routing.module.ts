@@ -28,8 +28,12 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./pages/profile-page/profile-page.module').then(m => m.ProfilePageModule),
         canActivate: [AuthGuard]
-      }
+      },
     ]
   }
 ];
