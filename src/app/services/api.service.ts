@@ -6,6 +6,7 @@ import {environment} from "../../environments/environment";
 })
 export class ApiService {
   readonly url = environment.url;
+  readonly urlPosts = this.url + 'posts';
 
   constructor() { }
 }
