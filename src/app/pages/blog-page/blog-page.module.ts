@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BlogPageComponent } from './blog-page.component';
 import {BlogPageRoutingModule} from "./blog-page-routing.module";
+import {PostPageModule} from "../post-page/post-page.module";
 
 
 
@@ -10,9 +11,10 @@ import {BlogPageRoutingModule} from "./blog-page-routing.module";
   declarations: [
     BlogPageComponent
   ],
-  imports: [
-    CommonModule,
-    BlogPageRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        BlogPageRoutingModule,
+        PostPageModule
+    ]
 })
 export class BlogPageModule { }

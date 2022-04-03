@@ -13,6 +13,9 @@ import {PostPageComponent} from "./post-page.component";
   imports: [
     CommonModule,
     PostPageRoutingModule
+  ],
+  exports: [
+    PostPageComponent
   ]
 })
 export class PostPageModule { }

@@ -8,5 +8,9 @@ export class ApiService {
   readonly url = environment.url;
   readonly urlPosts = this.url + 'posts';
 
-  constructor() { }
+  constructor(
+    private _http: ApiService,
+  ) { }
+
+
 }
