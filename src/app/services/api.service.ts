@@ -12,5 +12,8 @@ export class ApiService {
     private _http: ApiService,
   ) { }
 
+  // public createPost(createPost: IPost): Observable<any> {
+  //   return this._http.post()
+  // }
 
 }

@@ -33,7 +33,6 @@ export class AuthService {
     return window.localStorage.getItem('email') ? window.localStorage.getItem('email') : ''
   }
 
-
   constructor(
     private _http: HttpClient,
     private _router: Router
@@ -78,8 +77,8 @@ export class AuthService {
     this._router.navigate(['/admin', 'log-in']).then()
   }
 
-  isAdmin(): boolean {
+  isRoles(): boolean {
     // @ts-ignore
-    return this.role === 1 && this.role === 2;
+    return this.role === 1 || this.role === 2;
   }
 }

@@ -6,8 +6,6 @@ import {AuthService} from "../../../services/auth.service";
 import {Subscription} from "rxjs";
 import {IUser} from "../../../interfaces/iUser";
 
-
-
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -22,15 +20,15 @@ export class LogInComponent implements OnInit, OnDestroy {
   public aSub!: Subscription;
   public massage: string = '';
   public msg: string = '';
-  public title: string = 'Sing In'
-
+  public title: string = 'Sing In';
 
   constructor(
     private _auth: AuthService,
-    private _router: Router
+    private _router: Router,
   ) { }
 
   ngOnInit(): void {
+
     this.form = new FormGroup({
       email: new FormControl('', [
         Validators.required,
@@ -67,7 +65,7 @@ export class LogInComponent implements OnInit, OnDestroy {
       .subscribe(
         () => {
           this.form.reset();
-          this._router.navigate(['/admin', 'profile']).then();
+          this._router.navigate(['/admin','dashboard']).then();
           this.form.enable();
         },
         (error) => {
