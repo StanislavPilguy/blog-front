@@ -1,26 +1,36 @@
-<aside class="wrap-aside">
-  <div class="sidenav-header">
-    <a class="navbar" routerLink="/admin/dashboard" target="_blank">
-      <img src="assets/images/logo.png" class="img-responsive" alt="main_logo">
-    </a>
-  </div>
-</aside>
-<hr class=" light">
-<div class="wrap-bg-nav" >
-  <div class="bg-nav" *ngIf="adminCategories$ | async as adminCategories">
-    <ul class="nav-list">
-      <li *ngFor="let adminCategory of adminCategories">
-        <a href="#" class="nav-link">
-          <p>{{ adminCategory.name }}</p>
-        </a>
-      </li>
-      <li class="list-item">
-        <button class="log-out" (click)="auth.logout()">
-          <span class="material-icons-outlined">logout</span>
-        </button>
-      </li>
-    </ul>
-  </div>
+<div class="wrap-dashboard">
+  <aside class="wrap-aside">
+    <div class="sidenav-header">
+      <a class="navbar" routerLink="/admin/dashboard" target="_blank">
+        <img src="assets/images/logo.png" class="img-responsive" alt="main_logo">
+      </a>
+    </div>
+    <hr class=" light">
+    <div class="wrap-bg-nav" >
+      <div class="bg-nav" *ngIf="adminCategories$ | async as adminCategories">
+        <ul class="nav-list">
+          <li *ngFor="let adminCategory of adminCategories">
+            <a href="#" class="nav-link">
+              <p>{{ adminCategory.name }}</p>
+            </a>
+          </li>
+          <li class="list-item">
+            <button class="log-out" (click)="auth.logout()">
+              <span class="material-icons-outlined">logout</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <nav class="nav">
+   <div class="nav-card">
+     <p class="page">Dashboard</p>
+   </div>
+  </nav>
+
+
 </div>
+
 
 
