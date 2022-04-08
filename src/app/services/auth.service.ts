@@ -58,9 +58,7 @@ export class AuthService {
         tap(
           res => {
             if (res) {
-              console.log(res)
               window.localStorage.setItem('token', res.token)
-
             }
           }
         )

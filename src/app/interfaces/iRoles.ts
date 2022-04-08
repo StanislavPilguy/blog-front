@@ -1,4 +1,4 @@
-import {IUserRoles} from "./i-user-roles";
+import {IUserRoles} from "./iUser-roles";
 
 export interface IRoles {
   id?: number;

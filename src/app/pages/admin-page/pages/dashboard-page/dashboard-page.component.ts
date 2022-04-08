@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import {AdminCategoriesService} from "../../../../services/admin-categories.service";
+import {Observable} from "rxjs";
 import {AuthService} from "../../../../services/auth.service";
 
 @Component({
@@ -6,12 +9,15 @@ import {AuthService} from "../../../../services/auth.service";
   templateUrl: './dashboard-page.component.html',
 })
 export class DashboardPageComponent implements OnInit {
+  public adminCategories$!: Observable<any>;
 
   constructor(
-    public auth: AuthService
+    private _adminCategoriesService: AdminCategoriesService,
+    public auth: AuthService,
   ) { }
 
   ngOnInit(): void {
+    this.adminCategories$ = this._adminCategoriesService.getAdminCategories();
   }
 
 }

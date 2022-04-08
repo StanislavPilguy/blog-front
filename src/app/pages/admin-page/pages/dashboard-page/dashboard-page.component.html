@@ -6,12 +6,21 @@
   </div>
 </aside>
 <hr class=" light">
-<div class="wrap-bg-nav">
-  <div class="bg-nav">
-    <ul class="list-nav">
+<div class="wrap-bg-nav" >
+  <div class="bg-nav" *ngIf="adminCategories$ | async as adminCategories">
+    <ul class="nav-list">
+      <li *ngFor="let adminCategory of adminCategories">
+        <a href="#" class="nav-link">
+          <p>{{ adminCategory.name }}</p>
+        </a>
+      </li>
       <li class="list-item">
-        <a href="#">Categories</a>
+        <button class="log-out" (click)="auth.logout()">
+          <span class="material-icons-outlined">logout</span>
+        </button>
       </li>
     </ul>
   </div>
 </div>
+
+
