@@ -6,12 +6,15 @@ import {CategoriesComponentComponent} from "./components/categories-component/ca
 const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent,
+    component: DashboardPageComponent, children: [
+      {path: '', pathMatch: 'full', redirectTo: 'categories'},
+      {
+        path: 'categories',
+        component: CategoriesComponentComponent
+      }
+    ]
   },
-  {
-    path: 'categories',
-    component: CategoriesComponentComponent
-  }
+
 ];
 
 @NgModule({

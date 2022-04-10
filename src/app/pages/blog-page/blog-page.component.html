@@ -1,18 +1,9 @@
 <div class="container">
   <div class="blog-wrap">
-    <app-post-page></app-post-page>
-  </div>
-  <div class="blog-wrap">
-    <app-post-page></app-post-page>
-  </div>
-  <div class="blog-wrap">
-    <app-post-page></app-post-page>
-  </div>
-  <div class="blog-wrap">
-    <app-post-page></app-post-page>
-  </div>
-  <div class="blog-wrap">
-    <app-post-page></app-post-page>
+    <div *ngIf="posts$ | async as posts">
+      <app-post-card *ngFor="let post of posts.rows" [post]="post"></app-post-card>
+<!--      <pre>{{ posts | json }}</pre>-->
+    </div>
   </div>
 </div>
 

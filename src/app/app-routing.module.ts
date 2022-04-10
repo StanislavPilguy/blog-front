@@ -38,7 +38,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'blog/:id',
+    path: 'blog/:title',
     loadChildren: () => {
       return import('./pages/post-page/post-page.module').then(m => m.PostPageModule)
     }

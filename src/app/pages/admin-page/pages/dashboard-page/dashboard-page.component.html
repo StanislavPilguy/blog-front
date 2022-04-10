@@ -10,7 +10,7 @@
       <div class="bg-nav" *ngIf="adminCategories$ | async as adminCategories">
         <ul class="nav-list">
           <li *ngFor="let adminCategory of adminCategories">
-            <a href="#" class="nav-link">
+            <a [routerLink]="adminCategory.name" class="nav-link">
               <p>{{ adminCategory.name }}</p>
             </a>
           </li>
@@ -27,6 +27,9 @@
    <div class="nav-card">
      <p class="page">Dashboard</p>
    </div>
+    <div class="card-content">
+      <router-outlet></router-outlet>
+    </div>
   </nav>
 
 
