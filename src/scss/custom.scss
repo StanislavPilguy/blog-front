@@ -3,12 +3,12 @@
 @import "post";
 @import "dashboard";
 @import "categories";
-@import "media";
 
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
 
 body {
   font-size: 1em;
@@ -30,7 +30,7 @@ body {
 
 
 
-
+@import "media";
 
 
 
