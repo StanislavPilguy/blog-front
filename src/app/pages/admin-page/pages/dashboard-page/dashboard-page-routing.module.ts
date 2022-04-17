@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardPageComponent, children: [
-      {path: '', pathMatch: 'full', redirectTo: 'admin/dashboard'},
+      {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
     ]
   },
 

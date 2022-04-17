@@ -1,8 +1,16 @@
   <div class="wrapper-dashboard">
   <nav class="nav-content" [ngClass]="{ nav__active: isShown }">
-
-    <button type="checkbox" class="admin-menu" (click)="toggleShow()">Click</button>
+    <div class="admin-menu" (click)="toggleShow()">
+      <button type="checkbox" class="but-menu" (click)="toggleOpenBtn()" [ngClass]="{ active: isOpenBtn }">
+        <span></span>
+      </button>
+    </div>
     <ul class="nav-list" *ngIf="isShown">
+      <div class="menu-logo">
+        <a href="admin/dashboard">
+          <img src="assets/images/logo.png" alt="logo" class="img-responsive">
+        </a>
+      </div>
       <li>
         <a href="#">gbgbn</a>
       </li>

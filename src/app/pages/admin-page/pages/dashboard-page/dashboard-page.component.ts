@@ -12,7 +12,9 @@ export class DashboardPageComponent implements OnInit {
   public adminCategories$!: Observable<any>;
   public title = 'Dashboard';
   isShown: boolean = false;
-  isContentShow: boolean = false
+  isContentShow: boolean = false;
+  isOpenBtn: boolean = false;
+
 
   constructor(
     private _adminCategoriesService: AdminCategoriesService,
@@ -26,5 +28,9 @@ export class DashboardPageComponent implements OnInit {
   toggleShow() {
     this.isShown = ! this.isShown;
     this.isContentShow = ! this.isContentShow
+  }
+
+  toggleOpenBtn() {
+    this.isOpenBtn = ! this.isOpenBtn
   }
 }

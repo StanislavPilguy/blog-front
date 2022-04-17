@@ -1,10 +1,6 @@
 section {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  border: 1px dashed #32CD32;
 }
-
 .wrapper-dashboard {
   position: relative;
   overflow-x: hidden;
@@ -13,7 +9,7 @@ section {
   position: fixed;
   left: 0;
   top: 0;
-  width: 25%;
+  width: 250px;
   height: 100vh;
   padding: 1em 0 1em 1em;
   transition: all .5s;
@@ -23,19 +19,70 @@ section {
 .nav__active {
   transform: translateX(0%);
 }
+
 .nav-list {
+  padding: 0;
+  margin: 0;
   list-style: none;
-  height: 100%;
-  background-color: #000;
+  height: 94%;
+  background-image: linear-gradient(195deg, rgb(66 66 74) 0%, rgb(25 25 25) 100%);
+  border-radius: 25px;
+  box-shadow:  5px 5px 10px #35363c,
+  -5px -5px 10px #474a51;
   transition: .5s;
 }
 .admin-menu {
   position: absolute;
-  top: 1em;
+  top: 1.5em;
   right: -35px;
-  width: 30px;
-  height: 30px;
   z-index: 99;
+}
+
+.but-menu {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 20px;
+  background-color: transparent;
+  border: transparent;
+}
+.but-menu span,
+.but-menu span::before,
+.but-menu span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1px 0 0 -15px;
+  width: 30px;
+  height: 2px;
+  background-color: #222;
+}
+
+.but-menu span::before,
+.but-menu span::after {
+  content: '';
+  display: block;
+  transition: .5s;
+}
+
+.but-menu span::before {
+  transform: translateY(-7px);
+}
+
+.but-menu span::after {
+  transform: translateY(7px);
+}
+
+.active span::before {
+  transform: rotate(45deg);
+}
+
+.active span {
+  height: 0;
+}
+
+.active span::after {
+  transform: rotate(-45deg);
 }
 
 .content {
@@ -47,5 +94,9 @@ section {
 .content__active {
   transform: translateX(25%);
   transition: all .5s;
+}
+
+.card-dashboard {
+  height: 60px;
 }
 
