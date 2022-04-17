@@ -10,6 +10,9 @@ import {AuthService} from "../../../../services/auth.service";
 })
 export class DashboardPageComponent implements OnInit {
   public adminCategories$!: Observable<any>;
+  public title = 'Dashboard';
+  isShown: boolean = false;
+  isContentShow: boolean = false
 
   constructor(
     private _adminCategoriesService: AdminCategoriesService,
@@ -20,4 +23,8 @@ export class DashboardPageComponent implements OnInit {
     this.adminCategories$ = this._adminCategoriesService.getAdminCategories();
   }
 
+  toggleShow() {
+    this.isShown = ! this.isShown;
+    this.isContentShow = ! this.isContentShow
+  }
 }

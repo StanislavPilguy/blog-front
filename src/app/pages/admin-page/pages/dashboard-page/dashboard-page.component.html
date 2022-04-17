@@ -1,9 +1,21 @@
-<div class="wrapper-dashboard">
-  <div class="nav-content">
+  <div class="wrapper-dashboard">
+  <nav class="nav-content" [ngClass]="{ nav__active: isShown }">
 
-  </div>
-  <div class="content">
-
+    <button type="checkbox" class="admin-menu" (click)="toggleShow()">Click</button>
+    <ul class="nav-list" *ngIf="isShown">
+      <li>
+        <a href="#">gbgbn</a>
+      </li>
+      <li><a href="#">gnbn</a></li>
+      <li><a href="#">nnnn</a></li>
+    </ul>
+  </nav>
+  <div class="content" [ngClass]="{ content__active: isContentShow}">
+    <section>
+      <div class="card-dashboard">
+        <h2>{{ title }}</h2>
+      </div>
+    </section>
   </div>
 </div>
 
