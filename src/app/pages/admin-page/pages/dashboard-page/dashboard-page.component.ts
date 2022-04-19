@@ -14,6 +14,7 @@ export class DashboardPageComponent implements OnInit {
   isShown: boolean = false;
   isContentShow: boolean = false;
   isOpenBtn: boolean = false;
+  isColor: boolean = true
 
 
   constructor(
@@ -32,5 +33,9 @@ export class DashboardPageComponent implements OnInit {
 
   toggleOpenBtn() {
     this.isOpenBtn = ! this.isOpenBtn
+  }
+
+  toggleColor() {
+    this.isColor = ! this.isColor
   }
 }

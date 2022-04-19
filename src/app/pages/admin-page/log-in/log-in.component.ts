@@ -18,8 +18,7 @@ export class LogInComponent implements OnInit, OnDestroy {
   };
   public form!: FormGroup;
   public aSub!: Subscription;
-  public massage: string = '';
-  public msg: string = '';
+  public message: string = '';
   public title: string = 'Sing In';
 
   constructor(
@@ -69,8 +68,8 @@ export class LogInComponent implements OnInit, OnDestroy {
           this.form.enable();
         },
         (error) => {
-          if (error.error.massage) {
-           this.massage = error.error.massage;
+          if (error.error.message) {
+           this.message = error.error.message;
           }
         },
       )

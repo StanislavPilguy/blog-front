@@ -24,12 +24,14 @@ section {
   padding: 0;
   margin: 0;
   list-style: none;
-  height: 94%;
-  background-image: linear-gradient(195deg, rgb(66 66 74) 0%, rgb(25 25 25) 100%);
-  border-radius: 25px;
-  box-shadow:  5px 5px 10px #35363c,
-  -5px -5px 10px #474a51;
-  transition: .5s;
+  height: 100%;
+  background-color: #222224;
+  border-radius: 20px;
+  box-shadow:  8px 8px 16px rgba(0,  0, 0, .5);
+}
+
+.menu-logo {
+  padding: 30px;
 }
 .admin-menu {
   position: absolute;
@@ -37,7 +39,39 @@ section {
   right: -35px;
   z-index: 99;
 }
-
+.nav-list li {
+  border-radius: 0.375em;
+  align-items: center;
+  margin: 0 1em 1.5em 1em;
+  font-weight: 300;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  background-color: #222224;
+  box-shadow:  8px 8px 16px #1c1c1e,
+  -8px -8px 16px #28282a;
+  &:hover {
+    background-color: rgba(86, 85, 90, 1);
+  }
+  &:active {
+    background-color: rgb(199 199 199 / 20%);
+  }
+a {
+    display: block;
+    padding: 0.75em 1em;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    white-space: nowrap;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+.colorActive {
+  color: rgb(255 255 255);
+  border-right-width: 0;
+  border-bottom-width: 0;
+  background-color: rgb(199 199 199 / 20%);
+}
 .but-menu {
   position: relative;
   display: block;
@@ -45,6 +79,7 @@ section {
   height: 20px;
   background-color: transparent;
   border: transparent;
+  outline: none;
 }
 .but-menu span,
 .but-menu span::before,
@@ -97,6 +132,37 @@ section {
 }
 
 .card-dashboard {
-  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+  height: 50px;
+  h2 {
+    display: block;
+    padding-left: 2.5em;
+  }
+  .wrap-btn-dash {
+    margin-right: 2em;
+    .button-dash {
+      display: block;
+      background-color: #fff;
+      border: {
+        radius:  0.375em;
+        color: transparent;
+      }
+      max-width: 250px;
+      width: 100%;
+      box-shadow:  8px 8px 16px #d6d6d6,
+      -8px -8px 16px #ffffff;
+      padding: 11px 50px;
+      transition: all .5s;
+      &:hover {
+        background-color: rgb(233 30 99);
+        border-color: rgb(233 30 99);
+        box-shadow: 0 14px 26px -12px rgb(233 30 99 / 40%), 0 4px 23px 0 rgb(233 30 99 / 15%), 0 8px 10px -5px rgb(233 30 99 / 20%);
+        color: #fff;
+      }
+    }
+  }
 }
 

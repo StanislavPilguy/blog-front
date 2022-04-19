@@ -1,27 +1,29 @@
-  <div class="wrapper-dashboard">
+  <div class="wrapper-dashboard" *ngIf="adminCategories$ | async as adminCategories">
   <nav class="nav-content" [ngClass]="{ nav__active: isShown }">
     <div class="admin-menu" (click)="toggleShow()">
       <button type="checkbox" class="but-menu" (click)="toggleOpenBtn()" [ngClass]="{ active: isOpenBtn }">
         <span></span>
       </button>
     </div>
-    <ul class="nav-list" *ngIf="isShown">
+    <ul class="nav-list" *ngIf="isShown" >
       <div class="menu-logo">
         <a href="admin/dashboard">
           <img src="assets/images/logo.png" alt="logo" class="img-responsive">
         </a>
       </div>
-      <li>
-        <a href="#">gbgbn</a>
+      <li class="nav-item" *ngFor="let adminCategory of adminCategories" (click)="toggleColor()" [ngClass]="{ colorActive: isColor }">
+        <a  routerLink="{{ adminCategory.name }}">{{ adminCategory.name }}</a>
       </li>
-      <li><a href="#">gnbn</a></li>
-      <li><a href="#">nnnn</a></li>
     </ul>
   </nav>
   <div class="content" [ngClass]="{ content__active: isContentShow}">
     <section>
       <div class="card-dashboard">
         <h2>{{ title }}</h2>
+        <div class="wrap-btn-dash">
+          <button class="button-dash" type="submit" (click)="auth.logout()">Log Out</button>
+        </div>
+
       </div>
     </section>
   </div>
