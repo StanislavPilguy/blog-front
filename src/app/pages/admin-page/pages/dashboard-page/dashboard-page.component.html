@@ -11,21 +11,35 @@
           <img src="assets/images/logo.png" alt="logo" class="img-responsive">
         </a>
       </div>
-      <li class="nav-item" *ngFor="let adminCategory of adminCategories" (click)="toggleColor()" [ngClass]="{ colorActive: isColor }">
+      <li class="nav-item colorActive" *ngFor="let adminCategory of adminCategories" (click)="toggleColor()" [ngClass]="{ colorActive: isColor }">
         <a  routerLink="{{ adminCategory.name }}">{{ adminCategory.name }}</a>
       </li>
     </ul>
   </nav>
   <div class="content" [ngClass]="{ content__active: isContentShow}">
-    <section>
+    <section class="sec-dashboard">
       <div class="card-dashboard">
         <h2>{{ title }}</h2>
-        <div class="wrap-btn-dash">
-          <button class="button-dash" type="submit" (click)="auth.logout()">Log Out</button>
+        <p class="user-block">{{ hi }}<span>{{ auth.description }}</span>  </p>
+        <button class="button-dash" type="submit" (click)="auth.logout()">Log Out</button>
+      </div>
+      <div class="wrap-cart-post-icon">
+        <div class="card-post-icons">
+          <app-cart-post-icon></app-cart-post-icon>
         </div>
-
+        <div class="card-categories-icons">
+          <app-cart-post-icon></app-cart-post-icon>
+        </div>
+        <div class="card-users-icons">
+          <app-cart-post-icon></app-cart-post-icon>
+        </div>
+        <div class="card-roles-icons">
+          <app-cart-post-icon></app-cart-post-icon>
+        </div>
       </div>
     </section>
   </div>
 </div>
+
+
 

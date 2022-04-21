@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dev-web:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./dist/blog-front:/dist/blog-front
+    ports:
+      - "80:80"
+
+
+

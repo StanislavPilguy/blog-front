@@ -44,8 +44,8 @@ export class AuthService {
         tap(res => {
           if (res.token) {
             window.localStorage.setItem('token', res.token)
-            window.localStorage.setItem('role', res.role[0].value)
-            window.localStorage.setItem('description', res.role[0].description)
+            window.localStorage.setItem('role', res.role[res.role.length - 1].value)
+            window.localStorage.setItem('description', res.role[res.role.length -1].description)
             window.localStorage.setItem('email', res.user.email)
           }
         })

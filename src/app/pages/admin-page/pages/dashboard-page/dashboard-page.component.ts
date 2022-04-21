@@ -11,6 +11,8 @@ import {AuthService} from "../../../../services/auth.service";
 export class DashboardPageComponent implements OnInit {
   public adminCategories$!: Observable<any>;
   public title = 'Dashboard';
+  public description = ''
+  public hi = 'Hi!'
   isShown: boolean = false;
   isContentShow: boolean = false;
   isOpenBtn: boolean = false;

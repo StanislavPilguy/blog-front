@@ -20,7 +20,22 @@
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {}
+@media only screen and (max-width : 480px) {
+  .card-dashboard {
+    flex-wrap: wrap;
+    h2 {
+      padding: 1em 1em 0 3em;
+    }
+    .user-block {
+      padding: 1em 1em 0 0;
+    }
+    .button-dash {
+      width: 100%;
+      margin: 0 1em 0 1em;
+      padding: 0.7em 7em;
+    }
+  }
+}
 /**/
 
 

@@ -51,9 +51,6 @@ section {
   &:hover {
     background-color: rgba(86, 85, 90, 1);
   }
-  &:active {
-    background-color: rgb(199 199 199 / 20%);
-  }
 a {
     display: block;
     padding: 0.75em 1em;
@@ -70,7 +67,9 @@ a {
   color: rgb(255 255 255);
   border-right-width: 0;
   border-bottom-width: 0;
-  background-color: rgb(199 199 199 / 20%);
+  background-color: rgb(233 30 99);
+  border-color: rgb(233 30 99);
+  box-shadow: 0 14px 26px -12px rgb(233 30 99 / 40%), 0 4px 23px 0 rgb(233 30 99 / 15%), 0 8px 10px -5px rgb(233 30 99 / 20%);
 }
 .but-menu {
   position: relative;
@@ -135,34 +134,90 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1em;
   height: 50px;
   h2 {
     display: block;
-    padding-left: 2.5em;
+    padding: 1.9em 1em 0 4em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-shadow: 5px 5px 10px #7d7d7d;
   }
-  .wrap-btn-dash {
-    margin-right: 2em;
-    .button-dash {
-      display: block;
-      background-color: #fff;
-      border: {
-        radius:  0.375em;
-        color: transparent;
-      }
-      max-width: 250px;
-      width: 100%;
-      box-shadow:  8px 8px 16px #d6d6d6,
-      -8px -8px 16px #ffffff;
-      padding: 11px 50px;
-      transition: all .5s;
-      &:hover {
-        background-color: rgb(233 30 99);
-        border-color: rgb(233 30 99);
-        box-shadow: 0 14px 26px -12px rgb(233 30 99 / 40%), 0 4px 23px 0 rgb(233 30 99 / 15%), 0 8px 10px -5px rgb(233 30 99 / 20%);
-        color: #fff;
-      }
+  .user-block {
+    display: block;
+    margin: -1em 0 0 0;
+    padding: 1.9em 2.4em 0 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    text-shadow: 5px 5px 10px #7d7d7d;
+    span {
+      margin-left: .65em;
+    }
+  }
+  .button-dash {
+    display: block;
+    background-color: #fff;
+    margin: 1em 2em 0 0;
+    border: {
+      radius:  0.375em;
+      color: transparent;
+    }
+    box-shadow:  15px 15px 30px #9c9c9c,
+    -15px -15px 30px #ffffff;
+    transition: all .5s;
+    padding: 0.7em 3.8em;
+    &:hover {
+      background-color: rgb(233 30 99);
+      border-color: rgb(233 30 99);
+      box-shadow: 0 14px 26px -12px rgb(233 30 99 / 40%), 0 4px 23px 0 rgb(233 30 99 / 15%), 0 8px 10px -5px rgb(233 30 99 / 20%);
+      color: #fff;
     }
   }
 }
-
+.wrap-cart-post-icon {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: #090909 1px solid;
+  margin-top: 6.750em;
+  .card-post-icons {
+    grid-column: 1;
+    justify-self: center;
+    width: 250px;
+    height: 140px;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:  24px 24px 48px #b3b3b3,
+    -24px -24px 48px #ffffff;
+  }
+  .card-categories-icons {
+    grid-column: 2;
+    justify-self: center;
+    width: 250px;
+    height: 140px;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:  24px 24px 48px #b3b3b3,
+    -24px -24px 48px #ffffff;
+  }
+  .card-users-icons {
+    grid-column: 3;
+    justify-self: center;
+    width: 250px;
+    height: 140px;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:  24px 24px 48px #b3b3b3,
+    -24px -24px 48px #ffffff;
+  }
+  .card-roles-icons {
+    grid-column: 4;
+    justify-self: center;
+    width: 250px;
+    height: 140px;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow:  24px 24px 48px #b3b3b3,
+    -24px -24px 48px #ffffff;
+  }
+}
