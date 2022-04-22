@@ -21,4 +21,7 @@ export class BlogService {
   getPosts(): Observable<any> {
     return this._http.get(this.urlBlog)
   }
+  getPostsById(): Observable<any> {
+    return this._http.get(this.urlBlog)
+  }
 }

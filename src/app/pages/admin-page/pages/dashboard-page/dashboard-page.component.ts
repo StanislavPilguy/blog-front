@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdminCategoriesService} from "../../../../services/admin-categories.service";
 import {Observable} from "rxjs";
 import {AuthService} from "../../../../services/auth.service";
+import {BlogService} from "../../../../services/blog.service";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -16,8 +17,7 @@ export class DashboardPageComponent implements OnInit {
   isShown: boolean = false;
   isContentShow: boolean = false;
   isOpenBtn: boolean = false;
-  isColor: boolean = true
-
+  isColor: boolean = true;
 
   constructor(
     private _adminCategoriesService: AdminCategoriesService,
