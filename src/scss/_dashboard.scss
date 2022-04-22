@@ -163,8 +163,8 @@ a {
       radius:  0.375em;
       color: transparent;
     }
-    box-shadow:  15px 15px 30px #9c9c9c,
-    -15px -15px 30px #ffffff;
+    box-shadow: 5px 5px 10px #9c9c9c,
+    -5px -5px 10px #ffffff;
     transition: all .5s;
     padding: 0.7em 3.8em;
     &:hover {
@@ -184,39 +184,39 @@ a {
     justify-self: center;
     width: 250px;
     height: 140px;
-    border-radius: 25px;
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow:  24px 24px 48px #b3b3b3,
-    -24px -24px 48px #ffffff;
+    box-shadow:  5px 5px 10px #b3b3b3,
+    -5px -5px 10px #ffffff;
   }
   .card-categories-icons {
     grid-column: 2;
     justify-self: center;
     width: 250px;
     height: 140px;
-    border-radius: 25px;
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow:  24px 24px 48px #b3b3b3,
-    -24px -24px 48px #ffffff;
+    box-shadow:  5px 5px 10px #b3b3b3,
+    -5px -5px 10px #ffffff;
   }
   .card-users-icons {
     grid-column: 3;
     justify-self: center;
     width: 250px;
     height: 140px;
-    border-radius: 25px;
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow:  24px 24px 48px #b3b3b3,
-    -24px -24px 48px #ffffff;
+    box-shadow:  5px 5px 10px #b3b3b3,
+    -5px -5px 10px #ffffff;
   }
   .card-roles-icons {
     grid-column: 4;
     justify-self: center;
     width: 250px;
     height: 140px;
-    border-radius: 25px;
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow:  24px 24px 48px #b3b3b3,
-    -24px -24px 48px #ffffff;
+    box-shadow:  5px 5px 10px #b3b3b3,
+    -5px -5px 10px #ffffff;
   }
 }
