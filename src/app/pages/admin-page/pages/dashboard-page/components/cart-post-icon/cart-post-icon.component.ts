@@ -21,9 +21,4 @@ export class CartPostIconComponent implements OnInit {
       }
     )
   }
-
-
-
-
-
 }
