@@ -3,16 +3,37 @@
 }
 .icon {
   position: absolute;
-  top: -.7em;
-  left: 100px;
+  top: -1.2em;
+  left: .7em;
   padding: .7em;
   color: #fff;
   font-size: 2em;
   border-radius: .375em;
-  background: rgba(0, 0, 0, .9);
+  background-image: linear-gradient(195deg, rgb(66 66 74) 0%, rgb(25 25 25) 100%);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 .card-number {
   margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100px;
+  .item-title {
+    display: block;
+    padding-left: .7em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #f00000;
+  }
+  .item-value {
+    display: block;
+    padding-right: .6em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 3em;
+    font-weight: 900;
+    color: #32CD32;
+  }
 }
 
 

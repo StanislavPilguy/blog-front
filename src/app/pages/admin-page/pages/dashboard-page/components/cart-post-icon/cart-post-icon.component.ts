@@ -8,7 +8,7 @@ import {BlogService} from "../../../../../../services/blog.service";
 })
 export class CartPostIconComponent implements OnInit {
   posts: any = []
-  public title = 'Posts';
+  public title = 'Posts:';
 
   constructor(
     private blog: BlogService,
