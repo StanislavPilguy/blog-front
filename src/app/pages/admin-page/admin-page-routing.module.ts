@@ -4,8 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {AdminPageComponent} from "./admin-page.component";
 import {LogInComponent} from "./log-in/log-in.component";
 import {RegistrationComponent} from "./registration/registration.component";
-import {AuthGuard} from "../../guards/auth.guard";
-import {RolesGuard} from "../../guards/roles.guard";
 
 
 const routes: Routes = [
@@ -24,13 +22,6 @@ const routes: Routes = [
       {
         path: 'registration',
         component: RegistrationComponent,
-      },
-      {
-        path: 'dashboard',
-        loadChildren: () => {
-          return import('./pages/dashboard-page/dashboard-page.module').then(m => m.DashboardPageModule)
-        },
-        canActivate: [AuthGuard, RolesGuard]
       },
     ]
   }
