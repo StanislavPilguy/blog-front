@@ -3,13 +3,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  box-shadow: 0 0 50px rgba(0,0,0, .3);
+  background-color: #e8e8e8;
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff;
-    box-shadow: 0 0 50px rgba(0, 0, 0, .3);
+    box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+    background-color: #e8e8e8;
     max-width: 350px;
     width: 100%;
     padding: 20px;
@@ -36,7 +37,7 @@
       display: block;
       border: none;
       appearance: none;
-      background: #f2f2f2;
+      background: #e8e8e8;
       padding: 12px;
       border-radius: 3px;
       width: 100%;
@@ -82,7 +83,7 @@
       top: 20px;
       font-size: 10px;
       color: #222;
-      background: #fff;
+      background: #e8e8e8;
       width: auto
     }
 
