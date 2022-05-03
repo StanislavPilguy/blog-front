@@ -7,7 +7,7 @@ import { CartPostIconComponent } from './components/cart-post-icon/cart-post-ico
 import { CardCategoriesIconComponent } from './components/card-categories-icon/card-categories-icon.component';
 import { CardUsersIconComponent } from './components/card-users-icon/card-users-icon.component';
 import { CardRolesIconComponent } from './components/card-roles-icon/card-roles-icon.component';
-import { LeftNavComponent } from './components/left-nav/left-nav.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { LeftNavComponent } from './components/left-nav/left-nav.component';
     CardCategoriesIconComponent,
     CardUsersIconComponent,
     CardRolesIconComponent,
-    LeftNavComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,

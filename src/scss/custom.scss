@@ -7,13 +7,17 @@
 @import "card-categories-icon";
 @import "card-users-icon";
 @import "card-roles-icon";
-@import "left-nav";
 
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-size: 1em;

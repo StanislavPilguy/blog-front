@@ -1,28 +1,31 @@
-<div class="wrapper-dashboard">
-  <div class="content" [ngClass]="{ content__active: isContentShow}">
-    <app-left-nav (click)="toggleShow()"></app-left-nav>
-    <section class="sec-dashboard">
-      <div class="card-dashboard">
-        <h2>{{ title }}</h2>
-        <p class="user-block">{{ hi }}<span>{{ auth.description }}</span>  </p>
-        <button class="button-dash" type="submit" (click)="auth.logout()">Log Out</button>
+<div class="wrapper-dashboard" >
+  <nav class="menu-dashboard" [ngClass]="{ menuActive: isShown }">
+        <button class="but-left-menu-dashboard" (click)="toggleShow()" type="checkbox">
+        <span></span>
+      </button>
+      <ul class="nav-left-menu-list" >
+        <li class="list-item">
+          <a href="#">category</a>
+        </li>
+        <li class="list-item">
+          <a href="#">posts</a>
+        </li>
+        <li class="list-item">
+          <a href="#">roles </a>
+        </li>
+        <li class="list-item">
+          <a href="#">Users</a>
+        </li>
+      </ul>
+  </nav>
+  <div class="content-dashboard" [ngClass]="{ contentActive: isContentShow }">
+    <section class="dashboard">
+      <div class="wrap-logo">
+        <a href="">
+          <img src="assets/images/logo.png" alt="logo">
+        </a>
       </div>
-      <div class="wrap-cart-post-icon">
-        <div class="card-post-icons">
-          <app-cart-post-icon></app-cart-post-icon>
-        </div>
-        <div class="card-categories-icons">
-          <app-card-categories-icon></app-card-categories-icon>
-        </div>
-        <div class="card-users-icons">
-          <app-card-users-icon></app-card-users-icon>
-        </div>
-        <div class="card-roles-icons">
-          <app-card-roles-icon></app-card-roles-icon>
-        </div>
-      </div>
+      <h2>{{ title }}</h2>
     </section>
   </div>
 </div>
-
-

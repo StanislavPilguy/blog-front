@@ -5,10 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './card-categories-icon.component.html',
 })
 export class CardCategoriesIconComponent implements OnInit {
-  public title = 'Categories'
-  constructor() { }
+  public title = 'Categories:'
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
   }
+
 
 }

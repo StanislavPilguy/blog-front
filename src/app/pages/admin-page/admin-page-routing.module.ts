@@ -32,13 +32,6 @@ const routes: Routes = [
         },
         canActivate: [AuthGuard, RolesGuard]
       },
-      {
-        path: 'categories',
-        loadChildren: () => {
-          return import('./pages/categories-page/categories-page.module').then(m => m.CategoriesPageModule)
-        },
-        canActivate: [AuthGuard, RolesGuard]
-      }
     ]
   }
 ];

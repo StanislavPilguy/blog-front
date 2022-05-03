@@ -4,22 +4,19 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class BlogService {
+export class CategoriesService {
   readonly url = environment.url;
-  readonly urlBlog = this.url + 'posts/';
+  readonly urlCategories = this.url + 'categories/';
 
   constructor(
-    private _http: HttpClient,
+    private _http: HttpClient
   ) { }
 
-  getPostByTitle(title: string): Observable<any> {
-    return this._http.get(this.urlBlog + 'name/' + title)
-  }
-
-  getPosts(): Observable<any> {
-    return this._http.get(this.urlBlog)
+  getCategory(): Observable<any> {
+    return  this._http.get(this.urlCategories)
   }
 }
