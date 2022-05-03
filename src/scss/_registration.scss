@@ -108,28 +108,21 @@
 .custom-button {
   margin-top: 20px;
 }
-.btn {
+.but {
   color: #090909;
-  padding: 0.5em 1.7em;
+  padding: 0.7em 1.7em;
   font-size: 18px;
+  border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
   transition: all .3s;
   box-shadow: 6px 6px 12px #c5c5c5,
   -6px -6px 12px #ffffff;
-  outline: none!important;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #32CD32;
-  transition:
-    background-color 0.3s ease-in,
-    color 0.3s ease-in;
-  color: #f2f2f2;
-}
-
-.btn:active {
-  box-shadow: 4px 4px 12px #c5c5c5,
-  -4px -4px 12px #ffffff;
-  outline: #e8e8e8!important;
+.but:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+  inset -4px -4px 12px #ffffff;
 }
