@@ -5,10 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dashboard-page.component.html',
 })
 export class DashboardPageComponent implements OnInit {
+  isShow: boolean = false;
+  isContentShow: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleClass() {
+    this.isShow = ! this.isShow;
+    this.isContentShow = ! this.isContentShow;
+  }
 }

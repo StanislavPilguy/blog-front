@@ -1,1 +1,23 @@
-<p>dashboard-page works!</p>
+<div class="wrapper-dashboard">
+  <nav class="menu-dashboard" [ngClass]="{ menuActive: isShow }">
+    <button type="check" class="but-left-menu-dashboard" (click)="toggleClass()">
+      <span></span>
+    </button>
+    <ul class="nav-left-menu-list">
+        <li class="list-item">
+          <a href="#">categories</a>
+        </li>
+        <li class="list-item">
+          <a href="#">categories</a>
+        </li>
+        <li class="list-item">
+          <a href="#">categories</a>
+        </li>
+      </ul>
+  </nav>
+  <div class="content" [ngClass]="{ contentActive: isContentShow }">
+    <section class="dashboard">
+      <h1>Dashboard</h1>
+    </section>
+  </div>
+</div>
