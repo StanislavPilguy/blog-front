@@ -1,9 +1,11 @@
 .dashboard {
+  background-color: #8e8e8e;
   height: 100vh;
 }
 .wrapper-dashboard {
   position: relative;
   overflow-x: hidden;
+  background-color: #8e8e8e;
 }
 .menu-dashboard {
   position: fixed;
@@ -19,19 +21,42 @@
   transform: translateX(0%);
 }
 .nav-left-menu-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  display: block;
   background-image: linear-gradient(195deg, rgb(66 66 74) 0%, rgb(25 25 25) 100%);
-  padding: 25%;
+  width: 94%;
   margin: 1em 0 1em 1em;
   height: 96.5vh;
   border-radius: 10px;
+  padding-top: 50px;
 }
 .list-item {
-
+  a {
+    display: block;
+    padding: 1em 3em;
+    margin: 2.5em;
+    border-radius: .375em;
+    background: #36353b;
+    box-shadow:  6px 6px 12px #2c2b30,
+    -6px -6px 12px #403f46;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.2em;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+    &:hover {
+      background-color: rgb(199 199 199 / 20%);
+      border-radius: 0.375em;
+    }
+    &:focus {
+      background: #36353b;
+      box-shadow: inset 6px 6px 12px #2c2b30,
+      inset -6px -6px 12px #403f46;
+    }
+  }
 }
+
 
 .but-left-menu-dashboard {
   border: none;
