@@ -1,10 +1,12 @@
 <div class="wrapper-dashboard" *ngIf="categoriesAdmin$ | async as categoriesAdmin">
   <nav class="menu-dashboard" [ngClass]="{ menuActive: isShow }">
-    <button type="check" class="but-left-menu-dashboard" (click)="toggleClass()">
-      <span></span>
-    </button>
+    <div class="wrap-btn">
+      <button type="check" class="but-left-menu-dashboard" (click)="toggleClass()" [ngClass]="{ btnActive: isBtnActive }">
+        <span></span>
+      </button>
+    </div>
     <ul class="nav-left-menu-list">
-        <li class="list-item" *ngFor="let categoryAdmin of categoriesAdmin">
+        <li class="list-item" *ngFor="let categoryAdmin of categoriesAdmin" >
           <a class="item-list" routerLink="{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
         </li>
       </ul>

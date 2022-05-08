@@ -11,6 +11,8 @@ export class DashboardPageComponent implements OnInit {
   public categoriesAdmin$!: Observable<IAdminCategories[]>;
   isShow: boolean = false;
   isContentShow: boolean = false;
+  isActive: boolean = false;
+  isBtnActive: boolean = false;
 
   constructor(
     private admin: AdminCategoriesService
@@ -23,5 +25,7 @@ export class DashboardPageComponent implements OnInit {
   toggleClass() {
     this.isShow = ! this.isShow;
     this.isContentShow = ! this.isContentShow;
+    this.isBtnActive = ! this.isBtnActive
   }
+
 }

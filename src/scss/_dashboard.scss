@@ -1,11 +1,11 @@
 .dashboard {
-  background-color: #8e8e8e;
+  background-color: #f1f2f6;
   height: 100vh;
 }
 .wrapper-dashboard {
   position: relative;
   overflow-x: hidden;
-  background-color: #8e8e8e;
+  background-color: #f1f2f6;
 }
 .menu-dashboard {
   position: fixed;
@@ -45,6 +45,10 @@
     &:first-letter {
       text-transform: uppercase;
     }
+    &:active {
+      background-color: rgb(199 199 199 / 20%);
+      border-radius: 0.375em;
+    }
     &:hover {
       background-color: rgb(199 199 199 / 20%);
       border-radius: 0.375em;
@@ -56,17 +60,49 @@
     }
   }
 }
-
-
 .but-left-menu-dashboard {
   border: none;
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #f00000;
+  background: transparent;
+  border: transparent;
   position: absolute;
   top: 15px;
   right: -40px;
+}
+.but-left-menu-dashboard span,
+.but-left-menu-dashboard span::before,
+.but-left-menu-dashboard span::after {
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -15px;
+  width: 30px;
+  height: 2px;
+  background-color: #28282a;
+}
+.but-left-menu-dashboard span::before,
+.but-left-menu-dashboard span::after {
+  content: '';
+  display: block;
+  transition: all .5s ease;
+}
+.but-left-menu-dashboard span::before {
+  transform: translateY(-10px);
+}
+.but-left-menu-dashboard span::after {
+  transform: translateY(10px);
+}
+.btnActive span {
+  height: 0;
+}
+.btnActive span::before {
+  transform: rotate(45deg);
+}
+.btnActive span::after {
+  transform: rotate(-45deg);
 }
 .content-dashboard {
   transition: .5s;
