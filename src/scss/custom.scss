@@ -8,10 +8,15 @@
 @import "card-users-icon";
 @import "card-roles-icon";
 @import "buttons.component";
+@import "card";
 
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+p, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
 }
 
 ul {

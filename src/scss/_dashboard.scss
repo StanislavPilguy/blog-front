@@ -1,6 +1,109 @@
 .dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 60px 243px;
+  grid-row-gap: 50px;
   background-color: #f1f2f6;
-  height: 100vh;
+  height: 265px;
+
+}
+.wrap-logo__dashboard {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  margin-left: -15px;
+}
+.wrap-page-title {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  p {
+    display: block;
+    font-size: 1.2em;
+    color: #666666;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-left: 10px;
+    margin-top: 7px;
+    font-weight: 700;
+  }
+}
+.wrap-hello {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  margin-top: 15px;
+}
+.wrap-logout {
+  grid-column: 4;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  padding-right: 2em;
+  .but-log {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #f1f2f6;
+    border: 1px solid #f1f2f6;
+    transition: all .3s;
+    box-shadow:  5px 5px 11px #d6d7db,
+    -5px -5px 11px #ffffff;
+    &:active{
+      color: #666;
+      box-shadow: inset 5px 5px 11px #d6d7db,
+      inset -5px -5px 11px #ffffff;
+    }
+  }
+}
+.dashboard-card__one {
+  grid-column: 1;
+  grid-row: 2;
+  .card {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 240px;
+  }
+}
+.dashboard-card__second {
+  grid-column: 2;
+  grid-row: 2;
+  .card {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 240px;
+  }
+}
+.dashboard-card__third {
+  grid-column: 3;
+  grid-row: 2;
+  .card {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 240px;
+  }
+}
+.dashboard-card__fourth {
+  grid-column: 4;
+  grid-row: 2;
+  .card {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 240px;
+  }
 }
 .wrapper-dashboard {
   position: relative;
@@ -16,6 +119,7 @@
   transition: all .5s;
   transform: translateX(-100%);
   z-index: 2;
+  background-color: #f1f2f6;
 }
 .menuActive {
   transform: translateX(0%);

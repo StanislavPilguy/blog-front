@@ -3,8 +3,8 @@ import {HttpClient} from "@angular/common/http";
 
 import {environment} from "../../environments/environment";
 import {IAdminCategories} from "../interfaces/iAdmin-categories";
-
 import {Observable} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'

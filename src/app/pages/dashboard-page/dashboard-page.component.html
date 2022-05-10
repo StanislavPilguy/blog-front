@@ -7,13 +7,43 @@
     </div>
     <ul class="nav-left-menu-list">
         <li class="list-item" *ngFor="let categoryAdmin of categoriesAdmin" >
-          <a class="item-list" routerLink="{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
+          <a class="item-list" routerLink="/{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
         </li>
       </ul>
   </nav>
   <div class="content" [ngClass]="{ contentActive: isContentShow }">
     <section class="dashboard">
-      <h1>Dashboard</h1>
+      <div class="wrap-logo__dashboard">
+          <a routerLink="/dashboard">
+            <img src="assets/images/logo1.png" alt="logo" class="img-responsive">
+          </a>
+        </div>
+      <div class="wrap-page-title">
+          <p>Pages / </p>
+          <h1>{{ title }}</h1>
+        </div>
+      <div class="wrap-hello">
+          <h2>{{ hello }}! <span>{{ _auth.description}}</span></h2>
+        </div>
+      <div class="wrap-logout">
+          <button
+            class="but-log"
+            type="submit"
+            (click)="_auth.logout()"
+          >log out</button>
+      </div>
+      <div class="dashboard-card__one">
+        <div class="card"></div>
+      </div>
+        <div class="dashboard-card__second">
+          <div class="card"></div>
+        </div>
+        <div class="dashboard-card__third">
+          <div class="card"></div>
+        </div>
+        <div class="dashboard-card__fourth">
+          <div class="card"></div>
+        </div>
     </section>
   </div>
 </div>
