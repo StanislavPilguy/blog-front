@@ -6,8 +6,13 @@ import {DashboardPageComponent} from "./dashboard-page.component";
 const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent
-
+    component: DashboardPageComponent, children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard'
+      },
+    ]
   }
 ]
 

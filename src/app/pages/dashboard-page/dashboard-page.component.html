@@ -7,17 +7,12 @@
     </div>
     <ul class="nav-left-menu-list">
         <li class="list-item" *ngFor="let categoryAdmin of categoriesAdmin" >
-          <a class="item-list" routerLink="/{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
+          <a class="item-list" routerLink="{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
         </li>
       </ul>
   </nav>
   <div class="content" [ngClass]="{ contentActive: isContentShow }">
     <section class="dashboard">
-      <div class="wrap-logo__dashboard">
-          <a routerLink="/dashboard">
-            <img src="assets/images/logo1.png" alt="logo" class="img-responsive">
-          </a>
-        </div>
       <div class="wrap-page-title">
           <p>Pages / </p>
           <h1>{{ title }}</h1>
@@ -44,6 +39,10 @@
         <div class="dashboard-card__fourth">
           <div class="card"></div>
         </div>
+      <app-categories-page></app-categories-page>
     </section>
   </div>
 </div>
+
+
+

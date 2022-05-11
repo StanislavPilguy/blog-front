@@ -6,11 +6,11 @@ import { DashboardPageComponent } from './dashboard-page.component';
 
 @NgModule({
   declarations: [
-    DashboardPageComponent
+    DashboardPageComponent,
   ],
   imports: [
     CommonModule,
-    DashboardPageRoutingModule
+    DashboardPageRoutingModule,
   ]
 })
 export class DashboardPageModule { }

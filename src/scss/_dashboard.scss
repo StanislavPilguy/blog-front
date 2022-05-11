@@ -1,23 +1,16 @@
 .dashboard {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 60px 243px;
-  grid-row-gap: 50px;
+  grid-gap: 30px;
   background-color: #f1f2f6;
-  height: 265px;
-
-}
-.wrap-logo__dashboard {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: center;
-  justify-self: center;
-  margin-left: -15px;
+  height: 100vh;
+  padding: 0 2em;
 }
 .wrap-page-title {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
   display: flex;
   align-items: center;
@@ -36,10 +29,10 @@
   }
 }
 .wrap-hello {
-  grid-column: 3;
+  grid-column: 2 / 4;
   grid-row: 1;
   align-self: center;
-  justify-self: end;
+  justify-self: center;
   margin-top: 15px;
 }
 .wrap-logout {
@@ -68,6 +61,7 @@
 .dashboard-card__one {
   grid-column: 1;
   grid-row: 2;
+  justify-self: start;
   .card {
     display: block;
     margin: 0 auto;
@@ -78,6 +72,7 @@
 .dashboard-card__second {
   grid-column: 2;
   grid-row: 2;
+  justify-self: start;
   .card {
     display: block;
     margin: 0 auto;
@@ -88,6 +83,7 @@
 .dashboard-card__third {
   grid-column: 3;
   grid-row: 2;
+  justify-self: start;
   .card {
     display: block;
     margin: 0 auto;
@@ -98,6 +94,7 @@
 .dashboard-card__fourth {
   grid-column: 4;
   grid-row: 2;
+  justify-self: start;
   .card {
     display: block;
     margin: 0 auto;
@@ -149,15 +146,11 @@
     &:first-letter {
       text-transform: uppercase;
     }
-    &:active {
-      background-color: rgb(199 199 199 / 20%);
-      border-radius: 0.375em;
-    }
     &:hover {
       background-color: rgb(199 199 199 / 20%);
       border-radius: 0.375em;
     }
-    &:focus {
+    &:active {
       background: #36353b;
       box-shadow: inset 6px 6px 12px #2c2b30,
       inset -6px -6px 12px #403f46;
