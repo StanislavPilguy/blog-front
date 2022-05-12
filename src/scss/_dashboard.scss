@@ -46,8 +46,8 @@
 .dashboard-nav {
   padding: 1em .5em 1em 1em;
   .dashboard-left__menu {
-    background-image: linear-gradient(195deg, rgb(66 66 74) 0%, rgb(25 25 25) 100%);
-    height: 88vh;
+    background-color: #39393f;
+    height: 87vh;
     box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
     border-radius: 0.75rem;
     padding-top: 2em;
@@ -58,13 +58,19 @@
         display: block;
         width: 100%;
         text-decoration: none;
-        padding: 1.2em 1.7em;
+        padding: .9em 1.7em;
+        font-size: 18px;
+        font-weight: 700;
         background: #39393f;
-        box-shadow:  10px 10px 20px #2e2e33,
-        -10px -10px 20px #44444b;
+        box-shadow:  10px 10px 20px #333338,
+        -10px -10px 20px #3f3f46;
         color: #f1f2f6;
         border-radius: .5em;
+        &:first-letter {
+          text-transform: uppercase;
+        }
         &:active {
+          color: #777777;
           border-radius: .5em;
           background: #39393f;
           box-shadow: inset 10px 10px 20px #2e2e33,
@@ -76,6 +82,15 @@
 }
 .content {
   .wrap-content-dashboard {
+    width: 100%;
     height: 50px;
+    padding-top: 1em;
+    h1 {
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      padding-left: 20px;
+    }
   }
 }
