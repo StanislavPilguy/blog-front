@@ -15,17 +15,25 @@
     >log out</button>
   </div>
 </header>
+<div class="dashboard-layout">
+  <nav class="dashboard-nav" *ngIf="categoriesAdmin$ | async as categoriesAdmin">
+    <ul class="dashboard-left__menu">
+      <li class="dashboard-left__list" *ngFor="let categoryAdmin of categoriesAdmin">
+        <a routerLink="{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="content">
+    <div class="wrap-content-dashboard">
+      <div class="header-content">
 
-<nav class="dashboard-nav" *ngIf="categoriesAdmin$ | async as categoriesAdmin">
-  <ul class="dashboard-left__menu">
-    <li class="dashboard-left__list" *ngFor="let categoryAdmin of categoriesAdmin">
-      <a routerLink="categories">{{ categoryAdmin.name }}</a>
-    </li>
-  </ul>
-</nav>
-<div class="content">
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
 
 </div>
+
 
 
 

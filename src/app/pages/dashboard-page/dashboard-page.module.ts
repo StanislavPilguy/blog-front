@@ -1,24 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import {DashboardPageRoutingModule} from "./dashboard-page-routing.module";
 import { DashboardPageComponent } from './dashboard-page.component';
-import {CategoriesPageModule} from "./pages/categories-page/categories-page.module";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatMenuModule} from "@angular/material/menu";
-import {MatButtonModule} from "@angular/material/button";
+import { CategoryComponent } from './components/category/category.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { UsersComponent } from './components/users/users.component';
+import { RolesComponent } from './components/roles/roles.component';
 
 
 @NgModule({
   declarations: [
     DashboardPageComponent,
+    CategoryComponent,
+    PostsComponent,
+    UsersComponent,
+    RolesComponent,
   ],
   imports: [
     CommonModule,
     DashboardPageRoutingModule,
-    CategoriesPageModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-  ]
+]
 })
 export class DashboardPageModule { }

@@ -39,3 +39,43 @@
     }
   }
 }
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+.dashboard-nav {
+  padding: 1em .5em 1em 1em;
+  .dashboard-left__menu {
+    background-image: linear-gradient(195deg, rgb(66 66 74) 0%, rgb(25 25 25) 100%);
+    height: 88vh;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
+    border-radius: 0.75rem;
+    padding-top: 2em;
+    .dashboard-left__list {
+      display: block;
+      margin: 3em 1em;
+      a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        padding: 1.2em 1.7em;
+        background: #39393f;
+        box-shadow:  10px 10px 20px #2e2e33,
+        -10px -10px 20px #44444b;
+        color: #f1f2f6;
+        border-radius: .5em;
+        &:active {
+          border-radius: .5em;
+          background: #39393f;
+          box-shadow: inset 10px 10px 20px #2e2e33,
+          inset -10px -10px 20px #44444b;
+        }
+      }
+    }
+  }
+}
+.content {
+  .wrap-content-dashboard {
+    height: 50px;
+  }
+}
