@@ -1,48 +1,34 @@
-<div class="wrapper-dashboard" *ngIf="categoriesAdmin$ | async as categoriesAdmin">
-  <nav class="menu-dashboard" [ngClass]="{ menuActive: isShow }">
-    <div class="wrap-btn">
-      <button type="check" class="but-left-menu-dashboard" (click)="toggleClass()" [ngClass]="{ btnActive: isBtnActive }">
-        <span></span>
-      </button>
-    </div>
-    <ul class="nav-left-menu-list">
-        <li class="list-item" *ngFor="let categoryAdmin of categoriesAdmin" >
-          <a class="item-list" routerLink="{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
-        </li>
-      </ul>
-  </nav>
-  <div class="content" [ngClass]="{ contentActive: isContentShow }">
-    <section class="dashboard">
-      <div class="wrap-page-title">
-          <p>Pages / </p>
-          <h1>{{ title }}</h1>
-        </div>
-      <div class="wrap-hello">
-          <h2>{{ hello }}! <span>{{ _auth.description}}</span></h2>
-        </div>
-      <div class="wrap-logout">
-          <button
-            class="but-log"
-            type="submit"
-            (click)="_auth.logout()"
-          >log out</button>
-      </div>
-      <div class="dashboard-card__one">
-        <div class="card"></div>
-      </div>
-        <div class="dashboard-card__second">
-          <div class="card"></div>
-        </div>
-        <div class="dashboard-card__third">
-          <div class="card"></div>
-        </div>
-        <div class="dashboard-card__fourth">
-          <div class="card"></div>
-        </div>
-      <app-categories-page></app-categories-page>
-    </section>
+<header class="header-dashboard">
+  <div class="wrap-logo">
+    <a routerLink="/dashboard">
+      <img src="assets/images/logo1.png" alt="logo" class="img-responsive">
+    </a>
   </div>
+  <div class="wrap-hello">
+    <h2>{{ hello }}! <span>{{ _auth.description}}</span></h2>
+  </div>
+  <div class="wrap-logout">
+    <button
+      class="but-log"
+      type="submit"
+      (click)="_auth.logout()"
+    >log out</button>
+  </div>
+</header>
+
+<nav class="dashboard-nav" *ngIf="categoriesAdmin$ | async as categoriesAdmin">
+  <ul class="dashboard-left__menu">
+    <li class="dashboard-left__list" *ngFor="let categoryAdmin of categoriesAdmin">
+      <a routerLink="categories">{{ categoryAdmin.name }}</a>
+    </li>
+  </ul>
+</nav>
+<div class="content">
+
 </div>
+
+
+
 
 
 

@@ -12,6 +12,12 @@ const routes: Routes = [
         pathMatch: 'full',
         redirectTo: 'dashboard'
       },
+      {
+        path: 'categories',
+        loadChildren: () => {
+          return import('./pages/categories-page/categories-page.module').then(m => m.CategoriesPageModule)
+        }
+      }
     ]
   }
 ]

@@ -16,6 +16,8 @@ export class DashboardPageComponent implements OnInit {
   isBtnActive: boolean = false;
   hello: string = 'Hi';
   title: string = 'Dashboard';
+  vertebrates: any;
+  invertebrates: any;
 
   constructor(
     private admin: AdminCategoriesService,
