@@ -25,66 +25,24 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
+      margin: 0 0 2em 0;
     }
-
-    .custom-input .custom-field {
-      position: relative;
-      font-size: 14px;
-      padding-top: 20px;
-      margin-bottom: 5px;
-    }
-    .custom-input .custom-field input {
-      display: block;
+    .input {
       border: none;
-      appearance: none;
-      background: #e8e8e8;
-      padding: 12px;
-      border-radius: 3px;
+      padding: 1em;
       width: 100%;
-      outline: none;
-      font-size: 14px;
-    }
-    .custom-input .custom-field .custom-placeholder {
-      position: absolute;
-      left: 12px;
-      top: calc(50% + 10px);
-      transform: translateY(-50%);
-      color: #aaa;
-      transition:
-        top 0.3s ease,
-        font-size 0.3s ease,
-        color 0.3s ease;
-    }
-    .custom-input .custom-field input.dirty + .custom-placeholder,
-    .custom-input .custom-field input:focus + .custom-placeholder,
-    .custom-input .custom-field input:not(:placeholder-shown) + .custom-placeholder {
-      top: 10px;
-      font-size: 10px;
-      color: #222;
-    }
-    .custom-input .custom-field.one input {
-      background: none;
-      border: 2px solid #ddd;
-      transition: border-color 0.3s ease;
-    }
-    .custom-input .custom-field.one input + .custom-placeholder {
-      left: 8px;
-      padding: 0 5px;
-    }
-    .custom-input .custom-field.one input.dirty,
-    .custom-input .custom-field.one input:not(:placeholder-shown),
-    .custom-input .custom-field.one input:focus {
-      border-color: #222;
-      transition-delay: 0.1s
-    }
-    .custom-input .custom-field.one input.dirty + .custom-placeholder,
-    .custom-input .custom-field.one input:not(:placeholder-shown) + .custom-placeholder,
-    .custom-input .custom-field.one input:focus + .custom-placeholder {
-      top: 20px;
-      font-size: 10px;
-      color: #222;
+      border-radius: .5em;
       background: #e8e8e8;
-      width: auto
+      box-shadow: 5px 5px 12px #c5c5c5,
+      -5px -5px 12px #ffffff;
+      transition: 0.3s;
+    }
+    .input:focus {
+      outline-color: #e8e8e8;
+      background: #e8e8e8;
+      box-shadow: inset 20px 20px 60px #c5c5c5,
+      inset -20px -20px 60px #ffffff;
+      transition: 0.3s;
     }
 
     .alert-error {
@@ -106,11 +64,11 @@
 }
 
 .custom-button {
-  margin-top: 10px;
 }
 
 .but {
   color: #090909;
+  width: 100%;
   padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;

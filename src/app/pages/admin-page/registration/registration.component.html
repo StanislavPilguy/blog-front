@@ -2,12 +2,8 @@
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <h2>{{ title }}</h2>
     <div class="custom-input" [ngClass]="{invalid: form.invalid && (form.touched || form.dirty)}">
-      <label class="custom-field one">
-        <input type="email" name="email" id="email" formControlName="email" placeholder=" " required />
-        <span class="custom-placeholder">Enter Email</span>
-      </label>
-    </div>
-    <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error ">
+      <input type="email" name="email" class="input" formControlName="email" placeholder="Enter email...">
+      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error ">
         <span
           *ngIf="email?.errors?.['required']"
           class="err">
@@ -19,11 +15,10 @@
          Incorect Email
         </span>
       </span>
+    </div>
+
     <div class="custom-input">
-      <label class="custom-field one">
-        <input type="password" formControlName="password" placeholder=" " required />
-        <span class="custom-placeholder">Enter Password</span>
-      </label>
+      <input type="password" name="password" class="input" formControlName="password" placeholder="Enter password...">
     </div>
     <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error">
         <span
