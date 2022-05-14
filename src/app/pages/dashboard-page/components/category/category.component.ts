@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './category.component.html',
 })
 export class CategoryComponent implements OnInit {
-
+  categories: string = 'categories';
   constructor() { }
 
   ngOnInit(): void {
