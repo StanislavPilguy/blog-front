@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
+import {ICategories} from "../interfaces/iCategories";
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class CategoriesService {
     private _http: HttpClient
   ) { }
 
-  getCategory(): Observable<any> {
-    return  this._http.get(this.urlCategories)
+  getCategory(): Observable<ICategories[]> {
+    return  this._http.get<ICategories[]>(this.urlCategories)
   }
 }

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import {DashboardPageRoutingModule} from "./dashboard-page-routing.module";
 import { DashboardPageComponent } from './dashboard-page.component';
-import { CategoryComponent } from './components/category/category.component';
+import { CategoryComponent } from '../category/category.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
 import { RolesComponent } from './components/roles/roles.component';
 import {MatIconModule} from "@angular/material/icon";
+import {CategoryModule} from "../category/category.module";
 
 
 @NgModule({
@@ -18,10 +19,11 @@ import {MatIconModule} from "@angular/material/icon";
     UsersComponent,
     RolesComponent,
   ],
-    imports: [
-        CommonModule,
-        DashboardPageRoutingModule,
-        MatIconModule,
-    ]
+  imports: [
+    CommonModule,
+    DashboardPageRoutingModule,
+    MatIconModule,
+    CategoryModule,
+  ]
 })
 export class DashboardPageModule { }
