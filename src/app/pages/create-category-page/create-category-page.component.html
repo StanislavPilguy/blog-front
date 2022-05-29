@@ -1,1 +1,26 @@
-<p>create-category-page works!</p>
+<div class="create-category">
+  <h2>{{ title }}</h2>
+  <form class="form1" [formGroup]="form" (ngSubmit)="onCategorySubmit()">
+    <div class="custom-input-create" [ngClass]="{invalid: form.invalid && (form.touched || form.dirty)}">
+      <input type="text" name="name" class="input-create-category" formControlName="name" placeholder="Enter new category...">
+      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error ">
+        <span
+          *ngIf="name?.errors?.['required']"
+          class="err">
+            Name must not be empty
+        </span>
+      </span>
+    </div>
+    <small class="alert-error">{{ message }}</small>
+    <div class="custom-button-create">
+      <button
+        class="but-log"
+        type="submit"
+        [disabled]="form.invalid || form.disabled"
+      >Submit</button>
+    </div>
+  </form>
+</div>
+
+
+

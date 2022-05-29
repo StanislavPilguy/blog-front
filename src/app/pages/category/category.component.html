@@ -2,7 +2,7 @@
   <button class="but2" type="submit" routerLink="/dashboard/create-category">
     <i class="material-icons opacity-10">add</i>
   </button>
-  <button class="but1" type="submit">
+  <button class="but1" type="submit" (click)="onDelete()">
     <i class="material-icons opacity-10">delete</i>
   </button>
 </div>
@@ -13,10 +13,10 @@
   </div>
   <ul class="header-table-categories">
     <li *ngFor="let category of categories">
-      <div class="cntr">
-        <input type="checkbox" id="cbx" class="hidden-xs-up">
-        <label for="cbx" class="cbx"></label>
-      </div>
+      <label class="container">
+        <input type="checkbox" id="{{ category.id }}">
+        <div class="checkmark"></div>
+      </label>
       <p class="category-name">{{ category.name}}</p>
       <button class="but3">
         <i class="material-icons opacity-10">edit</i>

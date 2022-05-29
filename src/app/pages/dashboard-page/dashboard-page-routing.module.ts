@@ -25,7 +25,7 @@ const routes: Routes = [
         path: 'create-category',
         loadChildren: () => {
           return import('../create-category-page/create-category-page.module').then(m => m.CreateCategoryPageModule)
-        }
+        },
       },
       {
         path: 'posts',

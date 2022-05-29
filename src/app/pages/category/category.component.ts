@@ -5,11 +5,13 @@ import {Observable} from "rxjs";
 import {ICategories} from "../../interfaces/iCategories";
 
 @Component({
-  selector: 'app-category',
+    selector: 'app-category',
   templateUrl: './category.component.html',
 })
 export class CategoryComponent implements OnInit {
   categories$!: Observable<ICategories[]>;
+  public categories: ICategories[] = [];
+
 
   constructor(
     private _categoriesService: CategoriesService,
@@ -19,4 +21,10 @@ export class CategoryComponent implements OnInit {
     this.categories$ = this._categoriesService.getCategory();
   }
 
+  onDelete() {
+
+    this._categoriesService.deleteAll(this.categories).subscribe(() => {
+      console.log(this.categories.length)
+    })
+  }
 }
