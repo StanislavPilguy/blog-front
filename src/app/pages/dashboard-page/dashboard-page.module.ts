@@ -8,8 +8,6 @@ import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
 import { RolesComponent } from './components/roles/roles.component';
 import {MatIconModule} from "@angular/material/icon";
-import {CategoryModule} from "../category/category.module";
-
 
 @NgModule({
   declarations: [
@@ -23,7 +21,6 @@ import {CategoryModule} from "../category/category.module";
     CommonModule,
     DashboardPageRoutingModule,
     MatIconModule,
-    CategoryModule,
   ]
 })
 export class DashboardPageModule { }
