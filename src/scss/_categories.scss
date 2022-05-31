@@ -114,25 +114,35 @@ h2 {
       cursor: pointer;
       font-size: 20px;
       user-select: none;
+      width: 50px;
+      height: 50px;
+      border-radius: .3em;
+      border: 1px solid #f0f2f5;
+      transition: all .3s;
+      background: #f0f2f5;
+      box-shadow:  6px 6px 12px #ccced0,
+      -6px -6px 12px #ffffff;
     }
 
     /* Create a custom checkbox */
     .checkmark {
       position: relative;
-      top: 0;
-      left: 0;
+      top: 11px;
+      left: -1.5px;
       height: 1.3em;
       width: 1.3em;
-      background-color: #ccc;
+      background: #f0f2f5;
+      box-shadow: inset 6px 6px 12px #ccced0,
+      inset -6px -6px 12px #ffffff;
       transition: all 0.3s;
       border-radius: 5px;
     }
-
-    /* When the checkbox is checked, add a blue background */
     .container input:checked ~ .checkmark {
       background-color: #47da99;
       animation: pop 0.5s;
       animation-direction: alternate;
+      box-shadow:  6px 6px 12px #ccced0,
+      -6px -6px 12px #ffffff;
     }
 
     /* Create the checkmark/indicator (hidden when not checked) */
@@ -149,8 +159,8 @@ h2 {
 
     /* Style the checkmark/indicator */
     .container .checkmark:after {
-      left: 0.45em;
-      top: 0.25em;
+      left: 0.5em;
+      top: 0.3em;
       width: 0.25em;
       height: 0.5em;
       border: solid white;

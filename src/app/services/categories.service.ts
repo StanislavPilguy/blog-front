@@ -20,14 +20,22 @@ export class CategoriesService {
   ) { }
 
  public createCategory(category: ICategories): Observable<ICategories> {
-    return this._http.post<ICategories>(this.urlCategories, category);
+    return this._http.post<ICategories>(this.urlCategories, category, {
+      headers: {
+        'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+      }
+    });
  }
 
  public getCategory(): Observable<ICategories[]> {
     return  this._http.get<ICategories[]>(this.urlCategories)
   }
 
-  public deleteAll(categories: ICategories[]): Observable<ICategories[]> {
-    return this._http.post<ICategories[]>(this.urlCategoriesDel, categories)
+  public deleteAll(categoriesIds: number[]): Observable<number[]> {
+    return this._http.post<number[]>(this.urlCategoriesDel, categoriesIds, {
+      headers: {
+        'Authorization': 'Bearer ' + window.localStorage.getItem('token')
+      }
+    })
   }
 }

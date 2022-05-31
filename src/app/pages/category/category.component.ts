@@ -1,16 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 import {CategoriesService} from "../../services/categories.service";
 import {Observable} from "rxjs";
 import {ICategories} from "../../interfaces/iCategories";
 
 @Component({
-    selector: 'app-category',
+  selector: 'app-category',
   templateUrl: './category.component.html',
 })
 export class CategoryComponent implements OnInit {
   categories$!: Observable<ICategories[]>;
   public categories: ICategories[] = [];
+  // @ts-ignore
+  @ViewChild('list') list: ElementRef;
 
 
   constructor(
@@ -21,10 +23,21 @@ export class CategoryComponent implements OnInit {
     this.categories$ = this._categoriesService.getCategory();
   }
 
-  onDelete() {
 
-    this._categoriesService.deleteAll(this.categories).subscribe(() => {
-      console.log(this.categories.length)
-    })
+  onDelete() {
+    const inputs = this.list.nativeElement.querySelectorAll('input')
+    const checkedInputs = [...inputs].filter((x: any) => x.checked)
+    const categoriesIds = checkedInputs.map((x: any) => +x.id)
+    if (categoriesIds.length) {
+      this._categoriesService.deleteAll(categoriesIds).subscribe(
+        () => {
+          this.categories$ = this._categoriesService.getCategory();
+        }
+      )
+    }
+  }
+
+  onEdit() {
+
   }
 }
