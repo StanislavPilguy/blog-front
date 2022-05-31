@@ -28,6 +28,12 @@ const routes: Routes = [
         },
       },
       {
+        path: 'edit-category',
+        loadChildren: () => {
+          return import('../edit-category-page/edit-category-page.module').then(m => m.EditCategoryPageModule)
+        }
+      },
+      {
         path: 'posts',
         component: PostsComponent
       },
