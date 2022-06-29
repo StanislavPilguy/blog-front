@@ -1,1 +1,27 @@
-<p>edit-category-page works!</p>
+<div class="create-category">
+  <h2>Edit</h2>
+  <div *ngIf="category">
+
+
+  <div class="form1" >
+    <div class="custom-input-create" >
+      <input type="text" [(ngModel)]="category.name" class="input-create-category" >
+<!--      <span *ngIf="form.invalid && (form.touched || form.dirty)" class="alert-error ">-->
+<!--        <span-->
+<!--          *ngIf="name?.errors?.['required']"-->
+<!--          class="err">-->
+<!--            Name must not be empty-->
+<!--        </span>-->
+<!--      </span>-->
+    </div>
+    <div class="custom-button-create">
+      <button
+        class="but-log"
+        type="submit"
+        (click)="submit()"
+      >Update</button>
+    </div>
+  </div>
+  </div>
+</div>
+

@@ -12,9 +12,9 @@ import {Subscription} from "rxjs";
 })
 export class CreateCategoryPageComponent implements OnInit, OnDestroy {
   // @ts-ignore
-  private category: ICategories = {
-    name: '',
-  }
+    private category: ICategories = {
+      name: '',
+    }
   public aSub!: Subscription;
   public form!:  FormGroup;
   public message: string = '';
@@ -61,5 +61,6 @@ export class CreateCategoryPageComponent implements OnInit, OnDestroy {
         }
       }
     )
+    this._router.navigate(['dashboard', 'categories']).then()
   }
 }
