@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {CategoriesService} from "../../services/categories.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -34,9 +34,10 @@ export class EditCategoryPageComponent implements OnInit {
       this._categoriesService.updateCategory(this.categoryId, this.category).subscribe((data) => {
         this.category = (data.updateCategory)
         alert(data.message)
+        this._router.navigate(['/dashboard', 'categories']).then()
       })
     } else {
-      alert('P')
+      alert('p')
     }
   }
 }
