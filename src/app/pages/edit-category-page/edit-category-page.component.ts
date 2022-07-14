@@ -27,7 +27,6 @@ export class EditCategoryPageComponent implements OnInit {
       })
     })
   }
-
   submit() {
     if (this.category?.name.length) {
       // @ts-ignore

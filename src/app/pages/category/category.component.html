@@ -1,24 +1,24 @@
 <div class="wrap-categories">
-  <button class="but2" type="submit" (click)="onCreate()">
+  <button (click)="onCreate()" class="but2" type="submit">
     <i class="material-icons opacity-10">add</i>
   </button>
-  <button class="but1" type="submit" (click)="onDelete()">
+  <button (click)="onDelete()" class="but1" type="submit">
     <i class="material-icons opacity-10">delete</i>
   </button>
 </div>
-<div class="wrap-show-category" *ngIf="categories$ | async as categories">
+<div *ngIf="categories$ | async as categories" class="wrap-show-category">
   <div class="wrap-table-categories">
     <i class="material-icons opacity-10">list</i>
     <h3>Categories</h3>
   </div>
-  <ul class="header-table-categories" #list>
+  <ul #list class="header-table-categories">
     <li *ngFor="let category of categories">
       <label class="container">
-        <input type="checkbox" data-id="{{ category.id }}">
+        <input data-id="{{ category.id }}" type="checkbox">
         <div class="checkmark"></div>
       </label>
       <p class="category-name">{{ category.name }}</p>
-      <button type="submit" class="but3" (click)="updateCategoryId(category.id)">
+      <button (click)="updateCategoryId(category.id)" class="but3" type="submit">
         <i class="material-icons opacity-10">edit</i>
       </button>
     </li>
