@@ -1,18 +1,16 @@
-<div class="create-category">
+<div class="edit-category">
   <h2>Edit</h2>
-  <div *ngIf="category">
-    <div class="form1">
-      <div class="custom-input-create">
-        <input [(ngModel)]="category.name" class="input-create-category" type="text">
-      </div>
-      <div class="custom-button-create">
-        <button
-          (click)="submit()"
-          class="but-log"
-          type="submit"
-        >Update
-        </button>
-      </div>
+  <div *ngIf="category" class="wrap-edit">
+    <div class="custom-input-edit">
+      <input [(ngModel)]="category.name" class="input-edit-category" type="text">
+    </div>
+    <div class="custom-button-edit">
+      <button
+        (click)="submit()"
+        class="but-edit"
+        type="submit"
+      >Update
+      </button>
     </div>
   </div>
 </div>

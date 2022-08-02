@@ -22,7 +22,6 @@ export class EditCategoryPageComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.categoryId = +params['id']
       this._categoriesService.getCategoryById(this.categoryId).subscribe((data) => {
-        console.log(data)
         this.category = data[0]
       })
     })
@@ -32,11 +31,11 @@ export class EditCategoryPageComponent implements OnInit {
       // @ts-ignore
       this._categoriesService.updateCategory(this.categoryId, this.category).subscribe((data) => {
         this.category = (data.updateCategory)
-        alert(data.message)
+        alert(data.message + '!')
         this._router.navigate(['/dashboard', 'categories']).then()
       })
     } else {
-      alert('p')
+      alert('You cannot submit an empty category!')
     }
   }
 }
