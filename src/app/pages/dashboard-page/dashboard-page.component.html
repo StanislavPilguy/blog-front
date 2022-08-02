@@ -1,7 +1,7 @@
 <header class="header-dashboard">
   <div class="wrap-logo">
     <a routerLink="/dashboard">
-      <img src="assets/images/logo1.png" alt="logo" class="img-responsive">
+      <img alt="logo" class="img-responsive" src="assets/images/logo1.png">
     </a>
   </div>
   <div class="wrap-hello">
@@ -9,26 +9,26 @@
   </div>
   <div class="wrap-logout">
     <button
+      (click)="_auth.logout()"
       class="but-log"
       type="submit"
-      (click)="_auth.logout()"
     >log out</button>
   </div>
 </header>
 <div class="dashboard-layout">
-  <nav class="dashboard-nav" *ngIf="categoriesAdmin$ | async as categoriesAdmin">
+  <nav *ngIf="categoriesAdmin$ | async as categoriesAdmin" class="dashboard-nav">
     <ul class="dashboard-left__menu">
       <li class="dashboard-left__list">
         <a routerLink="/dashboard">{{ title }}</a>
       </li>
-      <li class="dashboard-left__list" *ngFor="let categoryAdmin of categoriesAdmin">
+      <li *ngFor="let categoryAdmin of categoriesAdmin" class="dashboard-left__list">
         <a routerLink="{{ categoryAdmin.name }}">{{ categoryAdmin.name }}</a>
       </li>
     </ul>
   </nav>
   <div class="content">
     <div class="wrap-header-content">
-      <h1>{{ title }} </h1>
+<!--      <h1>{{ title }} </h1>-->
     </div>
     <router-outlet></router-outlet>
   </div>
